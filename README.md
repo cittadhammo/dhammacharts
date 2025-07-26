@@ -16,3 +16,6 @@ in the areas.yml)
     should be processed into thumbnail of different size, map moisaic, lightbox depending 
     on the layout chosen.
 
+## Obsidian
+
+THe content folder can be edited via Obsidian. Actually, a vault containing content is stored on another repo that when a commit is pushed it get sync with this one.
