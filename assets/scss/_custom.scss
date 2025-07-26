@@ -1,0 +1,178 @@
+.rouge {
+	color: $color-red;
+}
+
+// .rouge:hover, .rouge-first:hover {
+// 	text-decoration: underline;
+// }
+
+.rouge, .black-under {
+	text-decoration: underline 0.09em rgba(255, 255, 255, 0);
+	transition: text-decoration-color 300ms;
+}
+
+.rouge:hover{
+	text-decoration-color: $color-red;
+}
+
+.black-under:hover  {
+	text-decoration-color: $color-black;
+}
+
+
+.rougeclair {
+	color: $color-red-light;
+}
+
+a.rougeclair:hover {
+	color: $color-red;
+}
+
+.blackclair {
+	color: $color-black-light;
+}
+
+a.blackclair:hover {
+	color: black;
+}
+
+.rouge h1 {
+	color: $color-red !important;
+}
+
+// .rouge h2{
+// 	color: $color-red!important;
+// }
+.rouge h3 {
+	color: $color-red !important;
+}
+
+.rouge h4 {
+	color: $color-red !important;
+}
+
+.rouge p {
+	color: $color-red !important;
+}
+
+.rouge .blackhead {
+	display: none;
+}
+
+.black .rougehead {
+	display: none;
+}
+
+.black {
+	color: black !important;
+}
+
+.rouge a {
+	color: $color-red;
+}
+
+.gris {
+	color: $color-gray;
+}
+
+.rouge-first::first-letter {
+	color: $color-red;
+}
+
+.arrow {
+	// border: solid grey;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 5px;
+}
+
+.left {
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+}
+
+// .bigger:hover .arrow {
+//   border: solid black;
+// 	border-width: 0 3px 3px 0;
+// }
+
+a.bigger {
+	position: relative;
+}
+
+// .bigger img{
+// 	display: inherit;
+// }
+.previous {
+	// width: 0.7em;
+	width: 0.5em;
+}
+
+.bigger::after {
+	content: "";
+	height: 200%;
+	width: 500%;
+	top: -55%;
+	left: -188%;
+	position: absolute;
+	// content:"";
+	// height: 3rem;
+	// width: 3rem;
+	// top: -50%;
+	// left: -50%;
+	// position: absolute;
+	// background: rgba(0, 0, 0, 0.4);
+}
+
+.foot {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	max-width: 70em;
+	padding: 0 3rem;
+
+
+	@media (min-width: $breakpoint-medium) {
+		flex-direction: row;
+		gap: 30%;
+
+	}
+}
+
+
+.flex-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-left {
+	width: 50%;
+	margin: 0 5px;
+	padding: 0 5px;
+}
+
+.flex-right {
+	width: 50%;
+	margin: 0 5px;
+	padding: 0 5px;
+}
+
+@media only screen and (max-width:900px) {
+	.flex-container {
+		flex-direction: column;
+	}
+
+	.flex-left {
+		width: 100%;
+
+	}
+
+	.flex-right {
+		width: 100%;
+	}
+
+	.inDiv {
+		// justify-content: center;
+	}
+}

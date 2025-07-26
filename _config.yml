@@ -1,3 +1,17 @@
+# User config
+email: "dhammacharts@protonmail.com"
+author: "DhammaCharts"
+keywords: "Dhamma, Chart"
+email: "dhammacharts@protonmail.com"
+
+# Site config
+# baseurl: "https://www.dhammacharts.org/old-website"
+baseurl: 
+highlighter: rouge
+sass:
+  sass_dir: assets/scss
+  style: compressed
+
 # Config file
 base_url: /
 collections_dir: content
@@ -28,3 +42,4 @@ defaults:
 
 exclude: 
   - README.md
+

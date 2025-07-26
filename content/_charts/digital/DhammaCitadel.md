@@ -1,7 +1,11 @@
 ---
 title: The Dhamma Citadel
-category: digital
+tyoe: Radial
+tech: D3
 order: 1
+
+images: 
+    -  
 ---
 
 This is a test. 

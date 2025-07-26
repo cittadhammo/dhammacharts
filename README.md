@@ -19,3 +19,30 @@ in the areas.yml)
 ## Obsidian
 
 THe content folder can be edited via Obsidian. Actually, a vault containing content is stored on another repo that when a commit is pushed it get sync with this one.
+
+## intstall 
+
+Pineaple Jekyll temaplte for this website
+
+Run: `jekyll serve` no need to `bundle install` or `bundle exec jekyll serve` on this repo.
+
+Change `baseurl` in `_confilg.yml` to: `` if it is the root folder for the website.
+
+# Dhamma Charts
+
+Site for displaying and storing Dhamma Charts and Art. 
+
+Using the [Pinaple](https://github.com/DhammaCharts/pineapple) template
+
+## Old To Do
+
+- Import nice charts in Others
+- Fix JoeRucker
+- Fix names
+- ~~Fix masonry~~
+- Add masonry to links
+- Update charts page
+    - links to image, fullscreen, etc.
+- change email image
+- Fix high res files, SVG etc.
+- Div sources links
