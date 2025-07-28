@@ -1,7 +1,6 @@
 ---
 title: The Buddha Brain 
 published: true
-category: digital
 order: 2
 ---
 
