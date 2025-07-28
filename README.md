@@ -10,6 +10,8 @@ Note: pages are part of the collection and need a frontmatter "type: page" to be
 at the top right of an area. (we could consider having a `_pages` collection and layout the pages
 in the areas.yml)
 
+Categories of the items are extracted via their path.
+
 ## Generating assets
 
 - Every original images in the assets that are listed in the frontmatter `images` of the pages
@@ -25,6 +27,8 @@ THe content folder can be edited via Obsidian. Actually, a vault containing cont
 Pineaple Jekyll temaplte for this website
 
 Run: `jekyll serve` no need to `bundle install` or `bundle exec jekyll serve` on this repo.
+
+`jekyll serve --livereload` for live reload.
 
 Change `baseurl` in `_confilg.yml` to: `` if it is the root folder for the website.
 
