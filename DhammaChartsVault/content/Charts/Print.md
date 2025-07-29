@@ -1,1 +1,0 @@
-Information about Printing charts and framing/hanging them.

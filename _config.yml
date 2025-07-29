@@ -14,8 +14,8 @@ sass:
 
 # Config file
 base_url: /
-collections_dir: content
-data_dir: content/_data
+collections_dir: vault/content
+data_dir: vault/data
 
 # The collections represent the areas of the websites.
 # Add collections below if you add a new _collection folder into content[:w
@@ -42,4 +42,13 @@ defaults:
 
 exclude: 
   - README.md
-
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle
+  - vendor/cache
+  - vendor/gems
+  - vendor/ruby

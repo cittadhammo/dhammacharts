@@ -1,7 +1,0 @@
- - [x] Where to put the images assets ? Only path in proprieties of items or full image in content (displayed in obsidian) ?
- - [ ] Using branch or different repo for building site ?
- - [ ] Title in proprieties necessary ? Could use file name ?
- - [ ] Subtitle propriety for long title ?
- - [ ] Content as description or as draft note ? Make sens as description as could be multiple paragraph and quite a bit of information.
- - [ ] Maybe have a blurb description in proprieties, but not the page itself ?
- - [ ] Do we rely on tags and type proprieties instead of folder structure ?

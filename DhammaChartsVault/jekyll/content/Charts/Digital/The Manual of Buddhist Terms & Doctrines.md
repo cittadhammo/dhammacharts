@@ -1,6 +1,0 @@
----
-title: 
-license: 
-tech: 
-description:
----
