@@ -28,12 +28,13 @@ h2,
 .h2 {	
 	color: variables.$color-silver-chalice;
 	display: block;
+	text-align: center; // use to be left
 	font-family: variables.$font-lekton;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: .2rem;
     line-height: 1;
-	margin: 0 0 0.3rem;
+	margin: 0 0 2rem;
     text-transform: uppercase;
 }
 

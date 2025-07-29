@@ -2,27 +2,45 @@
 
 {% assign area = site.data.areas | where: "name", area_name | first %}
 
----
-
-{% for category in area.categories %}
-   
-## {{ category.title }} 
-
 {% assign items = site[area_name] %}
 
-    {% for item in items %}
-    {% assign parents = item.url | split: "/" %}
-    {% assign parent  = parents[-2] %}
+{% for category in area.categories %}
+  {% assign category_name = category.name | remove: " " %}
+  <section class="projects">
+    <div class="container">
+      <h1 class="cat-title projects">{{ category.title }}</h1>
+      <ul class="projects-list {{ category_name }}">
+        {% for item in items %}
+          {% assign parent  = item.url | split: "/" | pop | last %}
+          {% if parent == category.name %}
+            <li class="grid-item {% if item.landscape %}landscape{% endif %}">
+              <a href="{{ item.url }}">
+                <div class="img-wrapper">
+                  <img src="{{ item.logo }}" alt="{{ item.title }}" />
+                </div>
+                <span class="h2">{{ item.type }}</span>
+                <h3>{{ item.title }}</h3>
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
 
-        {% if parent == category.name %} 
+  <script>
+    var grid_{{ category.name | replace: "-", "_" }} = document.querySelector('.{{ category.name }}');
+    var msnry_{{ category.name | replace: "-", "_" }};
 
-- <a href="{{ item.url }}"> {{ item.title }} </a>
-
-        {% endif %}
-
-    {% endfor %}
-
+    imagesLoaded(grid_{{ category.name | replace: "-", "_" }}, function() {
+      msnry_{{ category.name | replace: "-", "_" }} = new Masonry(grid_{{ category.name | replace: "-", "_"}}, {
+        itemSelector: '.grid-item',
+        percentPosition: true
+      });
+    });
+  </script>
 {% endfor %}
+
 
 
 

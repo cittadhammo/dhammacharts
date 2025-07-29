@@ -11,9 +11,7 @@ This Vault is meant to be a base content for dhammacharts.org website using jeky
 ## Jekyll and Bash script
 
 - script generate thumbnails small and medium, tiled maps, and lightbox size. Original files can be download on the page itself via links.
-- GitHub Action is used to create the jekyll website from the other repo (or branch) containing content and assets.
-- The proprieties of the pages are used to create the webpage but its content can be used as obsidian note for further reference ?
-- Use: `draft: true` to not publish the item on the website
+- Use: `draft: true` to not publish the item on the website or publish: false
 
 ## Templates
 
@@ -30,13 +28,12 @@ This Vault is meant to be a base content for dhammacharts.org website using jeky
 #### Digital
 ```dataview
 list
-from "content/Charts"
-group by parent_folder
+from "content/_charts/digital"
 ```
 #### By Others
 ```dataview
 list
-from "content/Charts/By Others"
+from "content/_charts/by-others"
 ```
 #### Hand Made
 ```dataview

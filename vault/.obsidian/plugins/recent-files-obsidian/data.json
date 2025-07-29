@@ -1,6 +1,30 @@
 {
   "recentFiles": [
     {
+      "basename": "Advanced.excalidraw",
+      "path": "assets/drawings/Advanced.excalidraw.md"
+    },
+    {
+      "basename": "DhammaCharts.org",
+      "path": "content/_projects/Websites/DhammaCharts.org.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
+      "basename": "CHECK",
+      "path": "CHECK.md"
+    },
+    {
+      "basename": "dhamma-citadel-3d",
+      "path": "content/_3d-printing/other/dhamma-citadel-3d.md"
+    },
+    {
+      "basename": "Logo.excalidraw",
+      "path": "assets/drawings/Logo.excalidraw.md"
+    },
+    {
       "basename": "second-jhana",
       "path": "content/_charts/hand-made/second-jhana.md"
     },
@@ -17,14 +41,6 @@
       "path": "content/_charts/hand-made/third-jhana.md"
     },
     {
-      "basename": "CHECK",
-      "path": "CHECK.md"
-    },
-    {
-      "basename": "Logo.excalidraw",
-      "path": "assets/drawings/Logo.excalidraw.md"
-    },
-    {
       "basename": "Cover.excalidraw",
       "path": "assets/drawings/Cover.excalidraw.md"
     },
@@ -39,18 +55,6 @@
     {
       "basename": "AreaOne.excalidraw",
       "path": "assets/drawings/AreaOne.excalidraw.md"
-    },
-    {
-      "basename": "Advanced.excalidraw",
-      "path": "assets/drawings/Advanced.excalidraw.md"
-    },
-    {
-      "basename": "DhammaCharts.org",
-      "path": "content/_projects/Websites/DhammaCharts.org.md"
-    },
-    {
-      "basename": "README",
-      "path": "README.md"
     },
     {
       "basename": "Template Item",
@@ -195,10 +199,6 @@
     {
       "basename": "Links",
       "path": "content/Charts/Links.md"
-    },
-    {
-      "basename": "Salayatana",
-      "path": "content/Charts/Hand Made/Salayatana.md"
     }
   ],
   "omittedPaths": [],

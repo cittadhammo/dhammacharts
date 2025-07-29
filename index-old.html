@@ -22,10 +22,7 @@
 				<h1 class="cat-title projects">{{ category_name }}</h1>
 				<ul class="projects-list {{ category_name | remove:" " }}">
 						{% for item in site.categories[category_name] %}
-						<li class="grid-item {% if item.landscape %}
-						landscape
-					  	{% endif %}"
-						>
+						<li class="grid-item {% if item.landscape %} landscape {% endif %}" >
 							<a href="{{ item.url | prepend: site.baseurl }}">
 								<div class="img-wrapper">
 									<img src="{{ item.project.logo | prepend: site.baseurl }}" alt="{{ item.project.title }}" />
