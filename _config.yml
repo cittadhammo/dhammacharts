@@ -23,7 +23,13 @@ collections:
   charts:
     output: true
     sort_by: order
-  3dprints:
+  3d-printing:
+    output: true
+    sort_by: order
+  writtings:
+    output: true
+    sort_by: order
+  references:
     output: true
     sort_by: order
 

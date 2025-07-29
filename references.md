@@ -1,8 +1,7 @@
 ---
-title: 3D Prints
-area: 3dprints
+title: References
+area: references
 layout: page
 ---
 
 {% include areaList.md %}
-

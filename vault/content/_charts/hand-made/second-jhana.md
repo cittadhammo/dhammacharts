@@ -1,8 +1,8 @@
 ---
-title: Third Jhana
+title: Second Jhana
 license: 
 tech: 
 description: 
-
-draft: "true"
+year: 
+order: 52
 ---

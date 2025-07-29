@@ -1,6 +1,22 @@
 {
   "recentFiles": [
     {
+      "basename": "second-jhana",
+      "path": "content/_charts/hand-made/second-jhana.md"
+    },
+    {
+      "basename": "first-jhana",
+      "path": "content/_charts/hand-made/first-jhana.md"
+    },
+    {
+      "basename": "fourth-jhana",
+      "path": "content/_charts/hand-made/fourth-jhana.md"
+    },
+    {
+      "basename": "third-jhana",
+      "path": "content/_charts/hand-made/third-jhana.md"
+    },
+    {
       "basename": "CHECK",
       "path": "CHECK.md"
     },
@@ -183,22 +199,6 @@
     {
       "basename": "Salayatana",
       "path": "content/Charts/Hand Made/Salayatana.md"
-    },
-    {
-      "basename": "12 Links",
-      "path": "content/Charts/Hand Made/12 Links.md"
-    },
-    {
-      "basename": "Patimotkkha 152",
-      "path": "content/Charts/Hand Made/Patimotkkha 152.md"
-    },
-    {
-      "basename": "The Twin Miracle",
-      "path": "content/Charts/Hand Made/The Twin Miracle.md"
-    },
-    {
-      "basename": "Core Topics of Buddhism",
-      "path": "content/Charts/By Others/Core Topics of Buddhism.md"
     }
   ],
   "omittedPaths": [],

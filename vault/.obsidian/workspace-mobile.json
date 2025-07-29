@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "templates/Template Item.md",
+                "file": "content/_charts/hand-made/second-jhana.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Template Item"
+              "title": "second-jhana"
             }
           }
         ],
@@ -197,8 +197,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7d1d96c95a9adc52",
+  "active": "f3187c0961231893",
   "lastOpenFiles": [
+    "content/_3d-printing/stupas/stupa-concrete-3d.md",
+    "content/_3d-printing/other/dhamma-citadel-3d.md",
+    "content/_3d-printing/stupas",
+    "content/_3d-printing/monks",
+    "content/_3d-printing/other",
+    "content/_3d-printing",
+    "content/_3dprinting/stupas/stupa-concrete-3d.md",
+    "content/_3dprinting/other/dhamma-citadel-3d.md",
+    "content/_3dprinting/stupas",
+    "content/_3dprinting/monks",
+    "content/_3dprinting/other",
+    "content/_3dprinting",
+    "content/_charts/hand-made/first-jhana.md",
+    "content/_charts/hand-made/fourth-jhana.md",
+    "content/_charts/hand-made/third-jhana.md",
+    "templates/Template Item.md",
     "content/3dprints/Stupa Concrete 3D Printing.md",
     "content/3dprints/Dhamma Citadel 3D.md",
     "content/3dprints",
@@ -207,14 +223,6 @@
     "jekyll/content/_charts/digital/BuddhaBrain.md",
     "jekyll/content/_charts/hand-made/patimokkha152.md",
     "jekyll/_site/charts/by-others/joe.html",
-    "jekyll/_site/charts/hand-made/patimokkha152.html",
-    "jekyll/_site/charts/digital/DhammaCitadel.html",
-    "jekyll/_site/charts/digital/BuddhaBrain.html",
-    "jekyll/_archive/_data/categories3.yml",
-    "jekyll/_archive/_data/structure.yml",
-    "jekyll/_archive/_data/categories2.yml",
-    "jekyll/_archive/_data/categories.yml",
-    "jekyll/_archive/_includes/list.html",
     "jekyll/content/_charts/prints.md",
     "jekyll/content/_charts/links.md",
     "jekyll/_archive/nav.md",
@@ -227,14 +235,6 @@
     "jekyll/_includes/areaList.md",
     "jekyll/3dprints.md",
     "jekyll/README.md",
-    "jekyll/charts.md",
-    "jekyll/index.md",
-    "jekyll-site/_archive/nav.md",
-    "jekyll-site/_archive/index.md",
-    "jekyll-site/_archive/chartsLists.md",
-    "jekyll-site/_archive/charts.md",
-    "jekyll-site/3dprints.md",
-    "jekyll-site/README.md",
     "assets/images/DhammaCitadel.png",
     "assets/images/BuddhaBrain.png"
   ]

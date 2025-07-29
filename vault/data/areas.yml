@@ -19,10 +19,30 @@
     - name:   links
       title:  Links
 
-- name:   3dprints
-  title:  3D Prints
+- name:   3d-printing
+  title:  3D Printing
   categories:
-    - name:   test
-      title:  Test
+    - name:   stupas
+      title:  Stupas
+    - name:   monk
+      title:  Monk
+    - name:   other
+      title:  Other
+  
+- name:   writtings
+  title:  Writtings
+  categories: 
+    - name:   chanting
+      title:   Chanting
+    - name:   dhamma
+      title:  Dhamma
+    - name:   vinaya
+      title:  Vinaya
+    - name:   perso
+      title:  Perso
 
-
+- name:   references
+  title:  References
+  categories: 
+    - name:   info
+      title:  Information

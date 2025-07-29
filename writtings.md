@@ -1,8 +1,7 @@
 ---
-title: 3D Prints
-area: 3dprints
+title: Writtings
+area: writtings
 layout: page
 ---
 
 {% include areaList.md %}
-
