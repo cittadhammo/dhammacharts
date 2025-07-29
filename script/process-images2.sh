@@ -2,7 +2,7 @@
 set -e
 
 # Source and destination directories
-SRC_DIR="content/assets/images"
+SRC_DIR="vault/assets/images"
 DEST_DIR="./assets/images"
 
 # Create destination directory if not exists

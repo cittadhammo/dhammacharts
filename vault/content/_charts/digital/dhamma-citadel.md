@@ -4,5 +4,5 @@ tech: D3
 license: CC0
 description: Enter description here
 images:
-  - "[[DhammaCitadel.png]]"
+  - name: DhammaCitadel.png
 ---
