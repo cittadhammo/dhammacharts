@@ -1,0 +1,30 @@
+# Config file
+base_url: /
+collections_dir: content
+data_dir: content/_data
+
+# The collections represent the areas of the websites.
+# Add collections below if you add a new _collection folder into content[:w
+collections:
+  charts:
+    output: true
+    sort_by: order
+  3dprints:
+    output: true
+    sort_by: order
+
+# This will add default layout to all items into categories.
+# For pages, make sure to specify a layout in the frontmatter
+defaults:
+  - scope:
+      path: ""
+      type: "charts"
+    values:
+      layout: "item"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+exclude: 
+  - README.md

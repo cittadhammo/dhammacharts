@@ -1,0 +1,28 @@
+# Stucture of the website divided into different areas.
+#
+# Notes: The category tag should be included in the items of the areas.
+# The categories should be included below to show up in the website.
+# If no category is specified, the items will be treated as pages on the top of the area home page.
+
+- name:   charts
+  title:  Charts
+  categories:
+    - name:   digital
+      title:  Digital
+    - name:   by-others 
+      title:  By Others
+    - name:   hand-made
+      title:  Hand Made
+  pages:
+    - name:   prints
+      title:  Prints
+    - name:   links
+      title:  Links
+
+- name:   3dprints
+  title:  3D Prints
+  categories:
+    - name:   test
+      title:  Test
+
+
