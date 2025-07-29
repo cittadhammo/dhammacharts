@@ -1,6 +1,6 @@
 ---
-title: 3D Prints
-area: 3dprints
+title: 3D Printing
+area: 3d-printing
 layout: page
 ---
 

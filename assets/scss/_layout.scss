@@ -1,13 +1,16 @@
+@use "mixins";
+@use "variables";
+
 .container {
 	display: block;
 	margin: 0 auto;
 	max-width: 70em;
 	padding: 0 3rem;
-	@include clearfix;
+	@include mixins.clearfix;
 }
 
 .header {
-	background: $color-white;
+	background: variables.$color-white;
 	padding: 3rem 0;
 }
 
@@ -29,7 +32,7 @@
 }
 
 .content {
-	background: $color-white;
+	background: variables.$color-white;
 	padding: 7rem 0 0;
 	//padding: 2rem 0 0;
 	// margin-bottom: 31.24rem;
@@ -38,7 +41,7 @@
 	left: 0;
 	z-index: 1;
 
-	@media (min-width: $breakpoint-medium) {
+	@media (min-width: variables.$breakpoint-medium) {
 		padding: 21rem 0 0;
 		//margin-bottom: 23.42rem;
 	}
@@ -65,7 +68,7 @@
 }
 
 .intro {
-	@media (min-width: $breakpoint-medium) {
+	@media (min-width: variables.$breakpoint-medium) {
 		p {
 			font-size: 2.7rem;
 			max-width: 66.66666%;
@@ -79,10 +82,10 @@
 		width: 100%;
 	}
 
-	@media (min-width: $breakpoint-small) {
+	@media (min-width: variables.$breakpoint-small) {
 		margin-left: -1.5rem;
 		margin-right: -1.5rem;
-		@include clearfix;
+		@include mixins.clearfix;
 
 		li {
 			width: 50%;
@@ -97,7 +100,7 @@
 		}
 	}
 
-	@media (min-width: $breakpoint-medium) {
+	@media (min-width: variables.$breakpoint-medium) {
 		li {
 			width: 33.33333%;
 			&.landscape{
@@ -134,7 +137,7 @@
 
 		&:before {
 			content: "View Chart";
-			color: $color-white;
+			color: variables.$color-white;
 			@extend .h2;
 			font-weight: 800;
 			position: absolute;
@@ -180,7 +183,7 @@
 	position: relative;
 	top: 0;
 
-	@media (min-width: $breakpoint-medium) {
+	@media (min-width: variables.$breakpoint-medium) {
 		margin-top: -21rem;
 
 		.article-wrapper {
@@ -199,7 +202,7 @@
 	article {
 		margin-bottom: 3rem;
 
-		@media (min-width: $breakpoint-medium) {
+		@media (min-width: variables.$breakpoint-medium) {
 			float: right;
 			right: 0;
 			width: 35%;
@@ -214,11 +217,11 @@
 		margin-left: -3rem;
 		margin-right: -3rem;
 
-		@media (min-width: $breakpoint-small) {
-			@include clearfix;
+		@media (min-width: variables.$breakpoint-small) {
+			@include mixins.clearfix;
 		}
 
-		@media (min-width: $breakpoint-medium) {
+		@media (min-width: variables.$breakpoint-medium) {
 			float: left;
 			//width: 55%;
 			width: 45%;
@@ -229,7 +232,7 @@
 	.project-meta {
 		margin: 3rem 0 0;
 
-		@media (min-width: $breakpoint-medium) {
+		@media (min-width: variables.$breakpoint-medium) {
 			margin: 5rem 0 0;
 			max-width: 70%;
 		}
@@ -266,7 +269,7 @@
 	padding: 5rem 0;
 
 	a {
-		color: $color-white;
+		color: variables.$color-white;
 		display: inline-block;
 		text-decoration: none;
 
@@ -301,7 +304,7 @@
 			margin: 0 auto;
 			text-align: center;
 
-			@media (min-width: $breakpoint-xsmall) {
+			@media (min-width: variables.$breakpoint-xsmall) {
 				display: inline-block;
 				margin: 0;
 				text-align: left;
@@ -309,7 +312,7 @@
 		}
 
 		&:nth-of-type(1) {
-			@media (min-width: $breakpoint-xsmall) {
+			@media (min-width: variables.$breakpoint-xsmall) {
 				float: left;
 			}
 		}
@@ -317,7 +320,7 @@
 		&:nth-of-type(2) {
 			margin-top: 3rem;
 
-			@media (min-width: $breakpoint-xsmall) {
+			@media (min-width: variables.$breakpoint-xsmall) {
 				float: right;
 				margin-top: 0;
 			}
@@ -379,7 +382,7 @@
 
 
 .footer {
-	background: $color-alabaster;
+	background: variables.$color-alabaster;
 	bottom: 0;
 	left: 0;
 	padding: 5rem 0;
@@ -390,7 +393,7 @@
 
 .contact,
 .follow {
-	@media (min-width: $breakpoint-medium) {
+	@media (min-width: variables.$breakpoint-medium) {
 		float: left;
 		margin-bottom: 0;
 		width: 50%;

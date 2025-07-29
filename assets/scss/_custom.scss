@@ -1,5 +1,7 @@
+@use "variables";
+
 .rouge {
-	color: $color-red;
+	color: variables.$color-red;
 }
 
 // .rouge:hover, .rouge-first:hover {
@@ -12,24 +14,24 @@
 }
 
 .rouge:hover{
-	text-decoration-color: $color-red;
+	text-decoration-color: variables.$color-red;
 }
 
 .black-under:hover  {
-	text-decoration-color: $color-black;
+	text-decoration-color: variables.$color-black;
 }
 
 
 .rougeclair {
-	color: $color-red-light;
+	color: variables.$color-red-light;
 }
 
 a.rougeclair:hover {
-	color: $color-red;
+	color: variables.$color-red;
 }
 
 .blackclair {
-	color: $color-black-light;
+	color: variables.$color-black-light;
 }
 
 a.blackclair:hover {
@@ -37,22 +39,22 @@ a.blackclair:hover {
 }
 
 .rouge h1 {
-	color: $color-red !important;
+	color: variables.$color-red !important;
 }
 
 // .rouge h2{
 // 	color: $color-red!important;
 // }
 .rouge h3 {
-	color: $color-red !important;
+	color: variables.$color-red !important;
 }
 
 .rouge h4 {
-	color: $color-red !important;
+	color: variables.$color-red !important;
 }
 
 .rouge p {
-	color: $color-red !important;
+	color: variables.$color-red !important;
 }
 
 .rouge .blackhead {
@@ -68,15 +70,15 @@ a.blackclair:hover {
 }
 
 .rouge a {
-	color: $color-red;
+	color: variables.$color-red;
 }
 
 .gris {
-	color: $color-gray;
+	color: variables.$color-gray;
 }
 
 .rouge-first::first-letter {
-	color: $color-red;
+	color: variables.$color-red;
 }
 
 .arrow {
@@ -133,7 +135,7 @@ a.bigger {
 	padding: 0 3rem;
 
 
-	@media (min-width: $breakpoint-medium) {
+	@media (min-width: variables.$breakpoint-medium) {
 		flex-direction: row;
 		gap: 30%;
 
