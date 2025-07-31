@@ -6,7 +6,7 @@
       "version": "3.11"
     }
   },
-  "postCreateCommand": "pip install -r requirements.txt && sudo apt update && sudo apt install -y chromium-browser",
+  "postCreateCommand": "pip install pymupdf && sudo apt update && sudo apt install -y chromium-browser",
   "customizations": {
     "vscode": {
       "settings": {},
