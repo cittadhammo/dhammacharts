@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-SRC_IMAGE_DIR="./vault/assets/images"
-DEST_IMAGE_DIR="./assets/images"
+SRC_IMAGE_DIR="./vault/assets/images/png"
+DEST_IMAGE_DIR="./assets/images/png"
 MD_DIR="./vault/content" # Change to your markdown folder
 
 mkdir -p "$DEST_IMAGE_DIR"

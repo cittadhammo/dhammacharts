@@ -4,4 +4,8 @@ license: CC0
 tech: D3
 description: 
 year:
+images: 
+    - name: A1S-31Planes.png
+      map: true
+    - name: test.png
 ---

@@ -18,13 +18,18 @@ Categories of the items are extracted via their path.
     should be processed into thumbnail of different size, map moisaic, lightbox depending 
     on the layout chosen.
 
+### searchAndMaps script
+
+This script scans all markdown files in your content folder to find images listed in their frontmatter. For each image, it copies the original and creates three resized thumbnails. If the image is marked as a map, it generates map tiles and records the image’s dimensions in `maps.yml`, updating existing entries or adding new ones.
+
+
 ## Obsidian
 
 THe content folder can be edited via Obsidian. Actually, a vault containing content is stored on another repo that when a commit is pushed it get sync with this one.
 
-## intstall 
+## install 
 
-Pineaple Jekyll temaplte for this website
+Pineaple Jekyll template for this website
 
 Run: `jekyll serve` no need to `bundle install` or `bundle exec jekyll serve` on this repo.
 
