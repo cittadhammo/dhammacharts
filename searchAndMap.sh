@@ -49,8 +49,7 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
                 vips dzsave "$SRC_IMG_PATH" "$TILE_PATH" \
                     --layout google --centre --suffix .png \
                     --tile-size 256 --vips-progress
-                echo "Current maps.yml content:"
-                cat "$MAPS_YAML"
+
                 echo "Checking if $IMG_NAME exists in $MAPS_YAML..."
                 if yq "any(.[]; .name == \"$IMG_NAME\")" "$MAPS_YAML" | grep -q true; then
                     echo "$IMG_NAME exists, updating width and height."
@@ -60,8 +59,6 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
                     echo "$IMG_NAME does not exist, appending new entry."
                     yq -i ". += [{\"name\": \"$IMG_NAME\", \"width\": $WIDTH, \"height\": $HEIGHT}]" "$MAPS_YAML"
                 fi
-                echo "Current maps.yml content:"
-                cat "$MAPS_YAML"
 
 
             fi
