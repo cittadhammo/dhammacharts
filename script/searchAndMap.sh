@@ -3,7 +3,7 @@ set -e
 
 SRC_IMAGE_DIR="./vault/assets/images/png"
 DEST_IMAGE_DIR="./assets/images/png"
-MD_DIR="./vault/content" # Change to your markdown folder
+MD_DIR="./vault/content" 
 MAPS_YAML="./vault/data/maps.yml"
 MAPS_HTML_DIR="./maps"
 TEMPLATE_HTML='---
@@ -22,6 +22,20 @@ layout: none
         html, body { margin: 0; height: 100%; width: 100%; overflow: hidden; }
         #map { width: 100%; height: 100%; background-color: __BG__; }
         .ol-control { font-size: 14px; }
+                .cross {
+			top: 0.5em;
+			right: 0.5em;
+            color: #aaaaaa;
+			float: right;
+			font-size: 14px;
+			font-weight: bold;
+		}
+        .close:hover,
+		.close:focus {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+		}
     </style>
 </head>
 
@@ -31,6 +45,38 @@ layout: none
         const width = __WIDTH__;
         const height = __HEIGHT__;
         const extent = [0, 0, width, height];
+
+        // cross button
+
+        const button = document.createElement("button");
+        button.innerHTML = "&times;";
+
+        {% assign cols = site.collections %}
+        {% for col in cols %}
+            {% assign docs = col.docs %}
+            {% for doc in docs %}
+                {% if doc.path == "__PATHMD__" %}
+                    console.log("{{doc.path}}")
+                    {% assign link = doc.url %}
+                {% endif %}
+            {% endfor %}    
+        {% endfor %}
+        {% assign cols = site.collections %}
+
+        const handle = function (e) {
+            window.open("{{ link }}", "_self");
+        };
+        button.addEventListener("click", handle, false);
+		
+        const element = document.createElement("div");
+		element.className = "cross ol-unselectable ol-control";
+		element.appendChild(button);
+
+		const OneControl = new ol.control.Control({
+			element: element
+		});
+
+        // end cross button
 
         const projection = new ol.proj.Projection({
             code: "pixels",
@@ -61,12 +107,20 @@ layout: none
                 maxZoom: 6
             }),
         });
+            map.addControl(OneControl);
+        // cursor
+
+        map.getViewport().style.cursor = "-webkit-grab";
+        map.on("pointerdrag", function (evt) {
+            map.getViewport().style.cursor = "-webkit-grabbing";
+        });
+
+        map.on("pointerup", function (evt) {
+            map.getViewport().style.cursor = "-webkit-grab";
+        });
     </script>
 </body>
 '
-
-
-
 
 mkdir -p "$DEST_IMAGE_DIR"
 
@@ -80,6 +134,7 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
         IMG_NAME=$(echo "$YAML" | yq -r ".images[$i].name")
         MAP=$(echo "$YAML" | yq -r ".images[$i].map // false")
         BG=$(echo "$YAML" | yq -r ".images[$i].background // \"white\"")
+        PATHMD="_${MD_FILE#*_}"
 
         echo "Found image: $IMG_NAME (map: $MAP)"
         
@@ -95,11 +150,13 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
         fi
 
         mkdir -p "$DEST_FOLDER"
-        cp "$SRC_IMG_PATH" "$DEST_FOLDER/original.$EXT"
+        cp "$SRC_IMG_PATH" "$DEST_FOLDER/$IMG_NAME"
+        # cp "$SRC_IMG_PATH" "$DEST_FOLDER/original.$EXT"
 
-        vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/thumb_small.$EXT" 200
-        vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/thumb_medium.$EXT" 800
-        vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/thumb_large.$EXT" 1600
+
+        vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/small.$EXT" 300
+        vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/medium.$EXT" 800
+        vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/large.$EXT" 1600
 
         if [ "$MAP" = "true" ]; then
             TILE_PATH="$DEST_FOLDER/tiles"
@@ -125,6 +182,7 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
                     | sed "s/__HEIGHT__/$HEIGHT/g" \
                     | sed "s/__BG__/$BG/g" \
                     | sed "s/__TITLE__/$(printf '%s\n' "$PAGE_TITLE" | sed 's/[&/\]/\\&/g')/g" \
+                    | sed "s|__PATHMD__|$PATHMD|g" \
                     > "$HTML_FILE"
 
             fi

@@ -16,7 +16,8 @@
             <li class="grid-item {% if item.landscape %}landscape{% endif %}">
               <a href="{{ item.url }}">
                 <div class="img-wrapper">
-                  <img src="{{ item.logo }}" alt="{{ item.title }}" />
+                  {% assign image = item.images | first %}
+                  <img src="assets/images/png/{{ image.name | split: '.' | first }}/medium.png" alt="{{ iamge.name }}" />
                 </div>
                 <span class="h2">{{ item.type }}</span>
                 <h3>{{ item.title }}</h3>

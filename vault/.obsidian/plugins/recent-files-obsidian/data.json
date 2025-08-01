@@ -1,6 +1,42 @@
 {
   "recentFiles": [
     {
+      "basename": "manual-buddhist-terms",
+      "path": "content/_charts/digital/manual-buddhist-terms.md"
+    },
+    {
+      "basename": "A1S-Pati",
+      "path": "assets/images/png/A1S-Pati.png"
+    },
+    {
+      "basename": "magga-vibhanga-stupa",
+      "path": "content/_charts/digital/magga-vibhanga-stupa.md"
+    },
+    {
+      "basename": "Khundaka",
+      "path": "content/_charts/digital/Khundaka.md"
+    },
+    {
+      "basename": "dhamma-citadel",
+      "path": "content/_charts/digital/dhamma-citadel.md"
+    },
+    {
+      "basename": "buddha-brain",
+      "path": "content/_charts/digital/buddha-brain.md"
+    },
+    {
+      "basename": "31-planes-of-existence",
+      "path": "content/_charts/digital/31-planes-of-existence.md"
+    },
+    {
+      "basename": "37-wings-to-awakenings",
+      "path": "content/_charts/digital/37-wings-to-awakenings.md"
+    },
+    {
+      "basename": "Parivara",
+      "path": "content/_charts/digital/Parivara.md"
+    },
+    {
       "basename": "Advanced.excalidraw",
       "path": "assets/drawings/Advanced.excalidraw.md"
     },
@@ -163,42 +199,6 @@
     {
       "basename": "Parivara",
       "path": "content/Charts/Digital/Parivara.md"
-    },
-    {
-      "basename": "31 Planes of Existence",
-      "path": "content/Charts/Digital/31 Planes of Existence.md"
-    },
-    {
-      "basename": "Combined Dependant Origination",
-      "path": "content/Charts/By Others/Combined Dependant Origination.md"
-    },
-    {
-      "basename": "DhammaCharts.org",
-      "path": "content/Projects/Websites/DhammaCharts.org.md"
-    },
-    {
-      "basename": "First Jhana",
-      "path": "content/Charts/Hand Made/First Jhana.md"
-    },
-    {
-      "basename": "Third Jhana",
-      "path": "content/Charts/Hand Made/Third Jhana.md"
-    },
-    {
-      "basename": "Fourth Jhana",
-      "path": "content/Charts/Hand Made/Fourth Jhana.md"
-    },
-    {
-      "basename": "Second Jhana",
-      "path": "content/Charts/Hand Made/Second Jhana.md"
-    },
-    {
-      "basename": "Print",
-      "path": "content/Charts/Print.md"
-    },
-    {
-      "basename": "Links",
-      "path": "content/Charts/Links.md"
     }
   ],
   "omittedPaths": [],

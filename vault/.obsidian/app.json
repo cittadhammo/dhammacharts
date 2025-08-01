@@ -2,5 +2,6 @@
   "alwaysUpdateLinks": true,
   "newFileLocation": "current",
   "attachmentFolderPath": "assets",
-  "showUnsupportedFiles": true
+  "showUnsupportedFiles": true,
+  "propertiesInDocument": "source"
 }

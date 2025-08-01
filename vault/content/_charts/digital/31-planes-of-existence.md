@@ -5,8 +5,8 @@ tech: D3
 description: 
 year:
 images: 
-    - name: A1S-31Planes.png
-      map: true
-      background: black
-    - name: test.png
+  - name: A1S-31Planes.png
+    map: true
 ---
+
+This is at test

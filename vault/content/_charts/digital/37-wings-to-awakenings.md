@@ -1,9 +1,11 @@
 ---
-title: "37 Wings to Awakenings"
+title: 37 Wings to Awakenings
 license: 
-tech: 
+tech:
+  - test
 description: 
-year:
-images: 
-    - name: A2S-37Wings.png
+year: 
+images:
+  - name: A2S-37Wings.png
+    map: true
 ---

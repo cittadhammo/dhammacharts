@@ -7,7 +7,7 @@
     "excalidraw-export-transparent": "checkbox",
     "excalidraw-mask": "checkbox",
     "excalidraw-export-dark": "checkbox",
-    "excalidraw-export-padding": "number",
+    "excalidraw-export-padding": "multitext",
     "excalidraw-export-pngscale": "number",
     "excalidraw-export-embed-scene": "checkbox",
     "excalidraw-link-prefix": "text",
@@ -28,6 +28,8 @@
     "sources": "multitext",
     "tech": "multitext",
     "draft": "checkbox",
-    "published": "checkbox"
+    "published": "checkbox",
+    "test": "multitext",
+    "maps": "multitext"
   }
 }

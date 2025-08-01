@@ -12,8 +12,22 @@ layout: none
 
     <style>
         html, body { margin: 0; height: 100%; width: 100%; overflow: hidden; }
-        #map { width: 100%; height: 100%; background-color: black; }
+        #map { width: 100%; height: 100%; background-color: white; }
         .ol-control { font-size: 14px; }
+                .cross {
+			top: 0.5em;
+			right: 0.5em;
+            color: #aaaaaa;
+			float: right;
+			font-size: 14px;
+			font-weight: bold;
+		}
+        .close:hover,
+		.close:focus {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+		}
     </style>
 </head>
 
@@ -23,6 +37,38 @@ layout: none
         const width = 7015;
         const height = 7015;
         const extent = [0, 0, width, height];
+
+        // cross button
+
+        const button = document.createElement("button");
+        button.innerHTML = "&times;";
+
+        {% assign cols = site.collections %}
+        {% for col in cols %}
+            {% assign docs = col.docs %}
+            {% for doc in docs %}
+                {% if doc.path == "_charts/digital/31-planes-of-existence.md" %}
+                    console.log("{{doc.path}}")
+                    {% assign link = doc.url %}
+                {% endif %}
+            {% endfor %}    
+        {% endfor %}
+        {% assign cols = site.collections %}
+
+        const handle = function (e) {
+            window.open("{{ link }}", "_self");
+        };
+        button.addEventListener("click", handle, false);
+		
+        const element = document.createElement("div");
+		element.className = "cross ol-unselectable ol-control";
+		element.appendChild(button);
+
+		const OneControl = new ol.control.Control({
+			element: element
+		});
+
+        // end cross button
 
         const projection = new ol.proj.Projection({
             code: "pixels",
@@ -52,6 +98,17 @@ layout: none
                 zoom: 2,
                 maxZoom: 6
             }),
+        });
+            map.addControl(OneControl);
+        // cursor
+
+        map.getViewport().style.cursor = "-webkit-grab";
+        map.on("pointerdrag", function (evt) {
+            map.getViewport().style.cursor = "-webkit-grabbing";
+        });
+
+        map.on("pointerup", function (evt) {
+            map.getViewport().style.cursor = "-webkit-grab";
         });
     </script>
 </body>
