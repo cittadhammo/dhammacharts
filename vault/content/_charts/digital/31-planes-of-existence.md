@@ -7,5 +7,6 @@ year:
 images: 
     - name: A1S-31Planes.png
       map: true
+      background: black
     - name: test.png
 ---

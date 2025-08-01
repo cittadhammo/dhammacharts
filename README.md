@@ -22,6 +22,10 @@ Categories of the items are extracted via their path.
 
 This script scans all markdown files in your content folder to find images listed in their frontmatter. For each image, it copies the original and creates three resized thumbnails. If the image is marked as a map, it generates map tiles and records the image’s dimensions in `maps.yml`, updating existing entries or adding new ones.
 
+```bash
+bash ./script/searchAndMap.sh
+```
+
 
 ## Obsidian
 
