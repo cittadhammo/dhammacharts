@@ -13,7 +13,6 @@ sass:
   style: compressed
 
 # Config file
-base_url: /
 collections_dir: vault/content
 data_dir: vault/data
 

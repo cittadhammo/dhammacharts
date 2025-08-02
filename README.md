@@ -59,3 +59,15 @@ Using the [Pinaple](https://github.com/DhammaCharts/pineapple) template
 - change email image
 - Fix high res files, SVG etc.
 - Div sources links
+
+## Local mirror
+
+```
+wget \
+  --mirror \
+  --convert-links \
+  --adjust-extension \
+  --page-requisites \
+  --no-parent \
+  http://localhost:4000/
+```
