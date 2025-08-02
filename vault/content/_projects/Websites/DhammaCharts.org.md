@@ -11,7 +11,7 @@ test:
 
 - Charts/
 	- [[Print]]
-	- [[Links]]
+	- [[links]]
 	- Digital/
 		- [[The Dhamma Citadel]]
 		- [[31 Planes of Existence]]
@@ -31,7 +31,7 @@ test:
 		- [[Dependant Origination Chart]]
 	- Hand Made/
 		- [[12 Links]]
-		- [[Salayatana]]
+		- [[salayatana]]
 		- [[Patimotkkha 152]]
 		- [[The Twin Miracle]]
 		- [[First Jhana]]
