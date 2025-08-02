@@ -22,13 +22,14 @@ h1,
 	font-weight: 400;
 	line-height: 1;
 	margin: 0;
+	text-align: left;
 }
 
 h2,
 .h2 {	
 	color: variables.$color-silver-chalice;
 	display: block;
-	text-align: center; // use to be left
+	text-align: left; // use to be left
 	font-family: variables.$font-lekton;
     font-size: 1.2rem;
     font-weight: 400;

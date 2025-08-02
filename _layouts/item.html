@@ -22,8 +22,6 @@
 					<span class="h2">Description</span>
 					{{ page.content }}
 
-
-
 					<div class="project-meta">
 
 						{% if page.author %}
@@ -35,25 +33,24 @@
 						<span class="h2">High Resolution File</span>
 						{% for file in page.files %}
 						<p class="rouge-first">
-							<a class="black-under" href="{{ file.url }}" target="_blank" rel="nofollow">{{ file.title }}</a> <br />
+							<a class="black-under" href="{{ file.url }}" target="_blank" rel="nofollow">{{ file.title
+								}}</a> <br />
 						</p>
 						{% endfor %}
 						{% endif %}
 
-
 						<!-- <button class="button-4"> View Fullscreen  </button> -->
 						{% if page.project.license %}
 						<span class="h2">License</span>
-						<p class="rouge-first"><a class="black-under"  href="{{ page.project.license-url }}">{{ page.project.license }}</a>
+						<p class="rouge-first"><a class="black-under" href="{{ page.project.license-url }}">{{
+								page.project.license }}</a>
 						</p>
 						{% endif %}
 
-
-
 						{% if page.code %}
 						<span class="h2">Code</span>
-						<p class="rouge-first"><a class="black-under" title="{{ page.code.title }}" href="{{ page.code.url }}"
-								target="_blank" rel="nofollow">{{ page.code.title }}</a></p>
+						<p class="rouge-first"><a class="black-under" title="{{ page.code.title }}"
+								href="{{ page.code.url }}" target="_blank" rel="nofollow">{{ page.code.title }}</a></p>
 						{% endif %}
 
 						<!-- {% if page.tech %}
@@ -76,7 +73,8 @@
 
 						{% for source in page.sources %}
 						<p class="rouge-first">
-							<a class="black-under" href="{{ source.url }}" target="_blank" rel="nofollow">{{ source.title }}</a>
+							<a class="black-under" href="{{ source.url }}" target="_blank" rel="nofollow">{{
+								source.title }}</a>
 						</p>
 						<p style="margin-left: 1em; ">
 							by {{ source.author }} </br> {{ source.license }}
@@ -97,32 +95,25 @@
 						{% assign img = image.name | split: '.' | first %}
 						<li>
 							{% if image.map %}
-							<!-- <a class="black-under" href="{{ image.map | prepend: site.baseurl }}"> below doesn't need extra pages for map, only one at top level-->
 							<div class="img-wrapper-2" style="position: relative; top: 0; left: 0;">
-								<a class="black-under" style="position: relative; top: 0; left: 0;" 
-								href='{{site.baseurl}}/maps/{{img}}.html'>
-									<img class="load-hidden" src="{{site.baseurl}}/assets/images/{{ img }}/medium.png"
+								<a class="black-under" style="position: relative; top: 0; left: 0;"
+									href='{{site.baseurl}}/maps/{{img}}.html'>
+									<img class="load-hidden"
+										src="{{site.baseurl}}/assets/images/items/{{ img }}/medium.png"
 										alt="{{ image.name }}" />
 								</a>
-								<!--<a class="black-under" style="position: absolute; top: 0; right: 0;" 
-								href='/map.html?map-url={{ image.map | prepend: site.baseurl }}&page-url={{ page.url | prepend: site.baseurl }}&zoom-max={{ image.zoom-max }}&zoom-min={{ image.zoom-min }}'>
+								<!-- code below add little button fullscreen -->
+								<!-- <a class="black-under" style="position: absolute; top: 0; right: 0;" 
+								href='{{site.baseurl}}/maps/{{img}}.html'>
 									<img class="load-hidden" style="width:20px"
 										src="{{ '/assets/images/icons/fullscreen.png' | prepend: site.baseurl }}"
 										alt="{{ image.alt }}" />
-								</a>-->
+								</a> -->
 							</div>
 							{% else if %}
 							<div class="img-wrapper-2" style="position: relative; top: 0; left: 0;">
-								
-									<img class="load-hidden" src="/assets/images/{{ img }}/medium.png"
-										alt="{{ image.alt }}" />
-								
-								<!--<a class="black-under" style="position: absolute; top: 0; right: 0;" 
-								href='{{ image.link }}'>
-									<img class="load-hidden" style="width:20px"
-										src="{{ '/assets/images/icons/fullscreen.png' | prepend: site.baseurl }}"
-										alt="{{ image.alt }}" />
-								</a>-->
+								<img class="load-hidden" src="/assets/images/items/{{ img }}/medium.png"
+									alt="{{ image.alt }}" />
 							</div>
 							{% endif %}
 						</li>
@@ -131,12 +122,13 @@
 				</aside>
 			</div>
 		</section>
-		
+
 		<section class="project-navigation">
 			<div class="container">
 
 				{% if page.next.url %}
-				<a class="prev" title="Previous {{ page.next.project.title }}" href="{{ page.next.url | prepend: site.baseurl }}">
+				<a class="prev" title="Previous {{ page.next.project.title }}"
+					href="{{ page.next.url | prepend: site.baseurl }}">
 					<span class="h2">Previous</span>
 					<h2>{{ page.next.project.title }}</h2>
 				</a>
@@ -145,7 +137,8 @@
 				{% endif %}
 
 				{% if page.previous.url %}
-				<a title="Next {{ page.previous.project.title }}" href="{{ page.previous.url | prepend: site.baseurl }}" class="next">
+				<a title="Next {{ page.previous.project.title }}" href="{{ page.previous.url | prepend: site.baseurl }}"
+					class="next">
 					<span class="h2">Next</span>
 					<h2>{{ page.previous.project.title }}</h2>
 				</a>
@@ -158,10 +151,10 @@
 		</section>
 	</main>
 	{% include footer.html %}
-	<script src="{{ " /assets/scripts/vendor/jquery-1.12.4.min.js" | prepend: site.baseurl }}"></script>
+	<script src="{{ ' /assets/scripts/vendor/jquery-1.12.4.min.js' | prepend: site.baseurl }}"></script>
 	<!-- <script src="{{ "/assets/scripts/vendor/scrollreveal.min.js" | prepend: site.baseurl }}"></script> -->
-	<script src="{{ " /assets/scripts/vendor/sticky-kit.min.js" | prepend: site.baseurl }}"></script>
-	<script src="{{ " /assets/scripts/project.js" | prepend: site.baseurl }}"></script>
+	<script src="{{ ' /assets/scripts/vendor/sticky-kit.min.js' | prepend: site.baseurl }}"></script>
+	<script src="{{ ' /assets/scripts/project.js' | prepend: site.baseurl }}"></script>
 </body>
 
 </html>

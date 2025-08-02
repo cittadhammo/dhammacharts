@@ -2,7 +2,7 @@
 set -e
 
 SRC_IMAGE_DIR="./vault/assets/images/"
-DEST_IMAGE_DIR="./assets/images/"
+DEST_IMAGE_DIR="./assets/images/items"
 MD_DIR="./vault/content" 
 MAPS_HTML_DIR="./maps"
 TEMPLATE_HTML='---
@@ -93,7 +93,7 @@ layout: none
                     preload: Infinity,
                     extent: extent,
                     source: new ol.source.TileImage({
-                        url: "{{ site.baseurl }}/assets/images/png/__IMG_NAME__/tiles/{z}/{y}/{x}.png",
+                        url: "{{ site.baseurl }}/assets/images/items/__IMG_NAME__/tiles/{z}/{y}/{x}.png",
                     })
                 })
             ],

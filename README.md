@@ -23,7 +23,7 @@ Categories of the items are extracted via their path.
 This script scans all markdown files in your content folder to find images listed in their frontmatter. For each image, it copies the original and creates three resized thumbnails. If the image is marked as a map, it generates map tiles and records the image’s dimensions in `maps.yml`, updating existing entries or adding new ones.
 
 ```bash
-bash ./script/searchAndMap.sh
+bash ./scripts/searchAndMap.sh
 ```
 
 
@@ -47,19 +47,6 @@ Site for displaying and storing Dhamma Charts and Art.
 
 Using the [Pinaple](https://github.com/DhammaCharts/pineapple) template
 
-## Old To Do
-
-- Import nice charts in Others
-- Fix JoeRucker
-- Fix names
-- ~~Fix masonry~~
-- Add masonry to links
-- Update charts page
-    - links to image, fullscreen, etc.
-- change email image
-- Fix high res files, SVG etc.
-- Div sources links
-
 ## Local mirror
 
 ```
@@ -71,3 +58,4 @@ wget \
   --no-parent \
   http://localhost:4000/
 ```
+

@@ -7,7 +7,7 @@ title: Home
 
 {% for area in site.data.areas %}
 <div style="text-align: center;">
-  <a href='{{ site.base_url | append: area.name | append: ".html"}}'>{{ area.title }}</a>
+  <a href='{{ site.baseurl | append: area.name | append: ".html"}}'>{{ area.title }}</a>
 </div>
 {% endfor %}
 

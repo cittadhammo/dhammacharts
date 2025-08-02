@@ -1,12 +1,48 @@
 {
   "recentFiles": [
     {
-      "basename": "CHECK",
-      "path": "CHECK.md"
+      "basename": "Advanced.excalidraw",
+      "path": "assets/drawings/Advanced.excalidraw.md"
+    },
+    {
+      "basename": "AreaOne.excalidraw",
+      "path": "assets/drawings/AreaOne.excalidraw.md"
+    },
+    {
+      "basename": "Areas.excalidraw",
+      "path": "assets/drawings/Areas.excalidraw.md"
+    },
+    {
+      "basename": "Charts.excalidraw",
+      "path": "assets/drawings/Charts.excalidraw.md"
+    },
+    {
+      "basename": "Cover.excalidraw",
+      "path": "assets/drawings/Cover.excalidraw.md"
+    },
+    {
+      "basename": "Logo.excalidraw",
+      "path": "assets/drawings/Logo.excalidraw.md"
+    },
+    {
+      "basename": "Logo.excalidraw",
+      "path": "assets/drawings/Logo.excalidraw.svg"
+    },
+    {
+      "basename": "31-planes-of-existence",
+      "path": "content/_charts/digital/31-planes-of-existence.md"
     },
     {
       "basename": "37-wings-to-awakenings",
       "path": "content/_charts/digital/37-wings-to-awakenings.md"
+    },
+    {
+      "basename": "manual-buddhist-terms",
+      "path": "content/_charts/digital/manual-buddhist-terms.md"
+    },
+    {
+      "basename": "CHECK",
+      "path": "CHECK.md"
     },
     {
       "basename": "README",
@@ -37,10 +73,6 @@
       "path": "content/_charts/hand-made/second-jhana.md"
     },
     {
-      "basename": "manual-buddhist-terms",
-      "path": "content/_charts/digital/manual-buddhist-terms.md"
-    },
-    {
       "basename": "A1S-Pati",
       "path": "assets/images/png/A1S-Pati.png"
     },
@@ -61,24 +93,12 @@
       "path": "content/_charts/digital/buddha-brain.md"
     },
     {
-      "basename": "31-planes-of-existence",
-      "path": "content/_charts/digital/31-planes-of-existence.md"
-    },
-    {
-      "basename": "Advanced.excalidraw",
-      "path": "assets/drawings/Advanced.excalidraw.md"
-    },
-    {
       "basename": "DhammaCharts.org",
       "path": "content/_projects/Websites/DhammaCharts.org.md"
     },
     {
       "basename": "dhamma-citadel-3d",
       "path": "content/_3d-printing/other/dhamma-citadel-3d.md"
-    },
-    {
-      "basename": "Logo.excalidraw",
-      "path": "assets/drawings/Logo.excalidraw.md"
     },
     {
       "basename": "first-jhana",
@@ -91,22 +111,6 @@
     {
       "basename": "third-jhana",
       "path": "content/_charts/hand-made/third-jhana.md"
-    },
-    {
-      "basename": "Cover.excalidraw",
-      "path": "assets/drawings/Cover.excalidraw.md"
-    },
-    {
-      "basename": "Charts.excalidraw",
-      "path": "assets/drawings/Charts.excalidraw.md"
-    },
-    {
-      "basename": "Areas.excalidraw",
-      "path": "assets/drawings/Areas.excalidraw.md"
-    },
-    {
-      "basename": "AreaOne.excalidraw",
-      "path": "assets/drawings/AreaOne.excalidraw.md"
     },
     {
       "basename": "Template Item",
@@ -195,10 +199,6 @@
     {
       "basename": "DhammaCitadel",
       "path": "assets/images/DhammaCitadel.png"
-    },
-    {
-      "basename": "Patimokkha Structure",
-      "path": "content/Charts/Digital/Patimokkha Structure.md"
     }
   ],
   "omittedPaths": [],

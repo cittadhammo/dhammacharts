@@ -1,21 +1,18 @@
-<!-- <header class="header">
-	<div class="container">
-		<h1 class="logo">
-			<a title="{{ site.author }}" href="{{ site.baseurl | append: "/" }}">{{ site.author }}</a>
-		</h1>
-	</div>
-</header> -->
-
 <header class="header">
 
 	<div class="container blackhead">
+
 		<h1 class="logo">
-			
 			<!-- <a title="{{ site.author }}" href="{{ site.baseurl | append: "/" }}">{{ site.author }}</a><span class="black"> | </span><a class="rouge" title="{{ site.author }}" href="{{ site.baseurl | append: "/links.html" }}">links</a> -->
-			<a class="black-under" title="{{ site.author }}" href="{{ site.baseurl | append: '/' }}">{{ site.author }}</a>
+			<a class="black-under" title="{{ site.author }}" href="{{ site.baseurl | append: '/' }}">{{ site.author
+				}}</a>
 		</h1>
-                <br/> <br/>
-                <h2 style="text-align : center; font-size : small"> This site is under construction <br/> Please do not share publicly</h2>
+		<br /> <br />
+		{% if page.layout == "item" %}
+		<a style="padding: 10px;" class="black-under" href="{{ site.baseurl }}/{{page.collection}}.html" class="bigger">
+			<i class="arrow left"></i>
+		</a>
+		{% endif %}
 
 	</div>
 </header>

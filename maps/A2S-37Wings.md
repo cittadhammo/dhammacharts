@@ -86,7 +86,7 @@ layout: none
                     preload: Infinity,
                     extent: extent,
                     source: new ol.source.TileImage({
-                        url: "{{ site.baseurl }}/assets/images/png/A2S-37Wings/tiles/{z}/{y}/{x}.png",
+                        url: "{{ site.baseurl }}/assets/images/items/A2S-37Wings/tiles/{z}/{y}/{x}.png",
                     })
                 })
             ],

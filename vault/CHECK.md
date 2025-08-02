@@ -12,5 +12,19 @@
  - [ ] have tag structure base category, no data, but name convention or soft keys (ligh coding) ?
  - [ ] Copy the assets from vault to website assets to serve them from the pages. 
  - [ ] If `map: true` then propose download of raw image, pdf, svg in the description.
-- [ ] `files: `  frontmatter for available downloads, (by default maps are included) 
-- [ ] License and Tech data for hyperlinks.
+ - [ ] `files: `  frontmatter for available downloads, (by default maps are included) 
+ - [ ] License and Tech data for hyperlinks.
+ - [ ] Images structure without items? Move up the other one, one level.
+
+ ## Old To Do
+
+- Import nice charts in Others
+- Fix JoeRucker
+- Fix names
+- ~~Fix masonry~~
+- Add masonry to links
+- Update charts page
+    - links to image, fullscreen, etc.
+- change email image
+- Fix high res files, SVG etc.
+- Div sources links
