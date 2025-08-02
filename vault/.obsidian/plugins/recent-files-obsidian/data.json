@@ -1,6 +1,42 @@
 {
   "recentFiles": [
     {
+      "basename": "CHECK",
+      "path": "CHECK.md"
+    },
+    {
+      "basename": "37-wings-to-awakenings",
+      "path": "content/_charts/digital/37-wings-to-awakenings.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
+      "basename": "A1S-Manual",
+      "path": "assets/images/png/A1S-Manual.png"
+    },
+    {
+      "basename": "A2S-37Wings",
+      "path": "assets/images/png/A2S-37Wings.png"
+    },
+    {
+      "basename": "A0H-SuttaPitaka",
+      "path": "assets/images/png/A0H-SuttaPitaka.png"
+    },
+    {
+      "basename": "Parivara",
+      "path": "content/_charts/digital/Parivara.md"
+    },
+    {
+      "basename": "A0SM-DhammaCitadel",
+      "path": "assets/images/png/A0SM-DhammaCitadel.png"
+    },
+    {
+      "basename": "second-jhana",
+      "path": "content/_charts/hand-made/second-jhana.md"
+    },
+    {
       "basename": "manual-buddhist-terms",
       "path": "content/_charts/digital/manual-buddhist-terms.md"
     },
@@ -29,14 +65,6 @@
       "path": "content/_charts/digital/31-planes-of-existence.md"
     },
     {
-      "basename": "37-wings-to-awakenings",
-      "path": "content/_charts/digital/37-wings-to-awakenings.md"
-    },
-    {
-      "basename": "Parivara",
-      "path": "content/_charts/digital/Parivara.md"
-    },
-    {
       "basename": "Advanced.excalidraw",
       "path": "assets/drawings/Advanced.excalidraw.md"
     },
@@ -45,24 +73,12 @@
       "path": "content/_projects/Websites/DhammaCharts.org.md"
     },
     {
-      "basename": "README",
-      "path": "README.md"
-    },
-    {
-      "basename": "CHECK",
-      "path": "CHECK.md"
-    },
-    {
       "basename": "dhamma-citadel-3d",
       "path": "content/_3d-printing/other/dhamma-citadel-3d.md"
     },
     {
       "basename": "Logo.excalidraw",
       "path": "assets/drawings/Logo.excalidraw.md"
-    },
-    {
-      "basename": "second-jhana",
-      "path": "content/_charts/hand-made/second-jhana.md"
     },
     {
       "basename": "first-jhana",
@@ -183,22 +199,6 @@
     {
       "basename": "Patimokkha Structure",
       "path": "content/Charts/Digital/Patimokkha Structure.md"
-    },
-    {
-      "basename": "Concise Patimokkha",
-      "path": "content/Writings/Concise Patimokkha.md"
-    },
-    {
-      "basename": "Vinaya Pitaka",
-      "path": "content/Charts/Digital/Vinaya Pitaka.md"
-    },
-    {
-      "basename": "Khundaka",
-      "path": "content/Charts/Digital/Khundaka.md"
-    },
-    {
-      "basename": "Parivara",
-      "path": "content/Charts/Digital/Parivara.md"
     }
   ],
   "omittedPaths": [],

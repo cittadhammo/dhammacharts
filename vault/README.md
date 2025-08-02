@@ -11,7 +11,7 @@ This Vault is meant to be a base content for dhammacharts.org website using jeky
 ## Jekyll and Bash script
 
 - script generate thumbnails small and medium, tiled maps, and lightbox size. Original files can be download on the page itself via links.
-- Use: `draft: true` to not publish the item on the website or publish: false
+- Use: `published: false` to not publish the item on the website or `draft: true` (?)
 
 ## SVG to PDF/PNG Converter
 
@@ -43,7 +43,11 @@ Each SVG filename should start with a format code to specify paper size, orienta
 - `2A0S-design.svg` → 2A0 Square, white background, no margin  
 - `A2VBM-sketch.svg` → A2 Vertical, black background, with margin  
 
+Usually name start with a capital and are camelcase. (maybe we should change)
 
+## Nested propreties
+
+For the moment obsidian do not support nested proprieties or collection in the frontmatter in preview mode. It would be nice as we could input the images directly using `[[]]` shortcut. Maybe in the future Obsidian will support this, but we need that proprieties to build the website comfortably with options for every pages. 
 ## Templates
 
 - Home Page

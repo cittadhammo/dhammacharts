@@ -7,7 +7,7 @@
     "excalidraw-export-transparent": "checkbox",
     "excalidraw-mask": "checkbox",
     "excalidraw-export-dark": "checkbox",
-    "excalidraw-export-padding": "multitext",
+    "excalidraw-export-padding": "number",
     "excalidraw-export-pngscale": "number",
     "excalidraw-export-embed-scene": "checkbox",
     "excalidraw-link-prefix": "text",
