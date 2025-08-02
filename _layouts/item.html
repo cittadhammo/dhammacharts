@@ -97,12 +97,11 @@
 						{% assign img = image.name | split: '.' | first %}
 						<li>
 							{% if image.map %}
-							<!-- we have a map -->
 							<!-- <a class="black-under" href="{{ image.map | prepend: site.baseurl }}"> below doesn't need extra pages for map, only one at top level-->
 							<div class="img-wrapper-2" style="position: relative; top: 0; left: 0;">
 								<a class="black-under" style="position: relative; top: 0; left: 0;" 
-								href='{{sitebase}}/maps/{{img}}.html'>
-									<img class="load-hidden" src="{{sitebase}}/assets/images/png/{{ img }}/medium.png"
+								href='{{site.baseurl}}/maps/{{img}}.html'>
+									<img class="load-hidden" src="{{site.baseurl}}/assets/images/{{ img }}/medium.png"
 										alt="{{ image.name }}" />
 								</a>
 								<!--<a class="black-under" style="position: absolute; top: 0; right: 0;" 
@@ -115,7 +114,7 @@
 							{% else if %}
 							<div class="img-wrapper-2" style="position: relative; top: 0; left: 0;">
 								
-									<img class="load-hidden" src="/assets/images/png/{{ img }}/medium.png"
+									<img class="load-hidden" src="/assets/images/{{ img }}/medium.png"
 										alt="{{ image.alt }}" />
 								
 								<!--<a class="black-under" style="position: absolute; top: 0; right: 0;" 
