@@ -178,3 +178,21 @@ a.bigger {
 		// justify-content: center;
 	}
 }
+
+.logo-and-title-container {
+	display: flex;
+	align-items: flex-start; /* Vertically align logo and text block */
+	gap: 10px;
+}
+
+.title-group {
+  display: flex;
+  flex-direction: column;
+  
+
+  h2 {
+    font-size: 1.7rem; // or 20px, or any unit you prefer
+	color: black;
+    margin: 0; // optional: to reduce spacing
+  }
+}

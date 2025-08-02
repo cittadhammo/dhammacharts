@@ -1,13 +1,31 @@
 <header class="header">
 
-	<div class="container blackhead">
-
-		<h1 class="logo">
-			<!-- <a title="{{ site.author }}" href="{{ site.baseurl | append: "/" }}">{{ site.author }}</a><span class="black"> | </span><a class="rouge" title="{{ site.author }}" href="{{ site.baseurl | append: "/links.html" }}">links</a> -->
-			<a class="black-under" title="{{ site.author }}" href="{{ site.baseurl | append: '/' }}">{{ site.author
-				}}</a>
-		</h1>
-		<br /> <br />
+<div class="container blackhead">
+	<div class="logo-and-title-container">
+		<a href="{{ site.baseurl | append: '/' }}">
+			<img src="{{ site.baseurl }}/assets/images/icons/logoSmall.png" alt="{{ site.author }}" style="max-height: 50px;">
+		</a>
+		<div class="title-group">
+			<h1 class="logo">
+				<a  title="{{ site.author }}" href="{{ site.baseurl | append: '/' }}">{{ site.author }}</a>
+			</h1>
+			{% if page.layout == "item" %}
+			<h2>
+				<a href="{{ site.baseurl }}/{{page.collection}}.html" >
+					{% assign area = site.data.areas | where: name, page.collection | first %}
+					{{ area.title }}
+				</a>
+			</h2>
+			{% endif %}
+			{% if page.layout == "page" %}
+			<h2 >
+					{{ page.title }}
+			</h2>
+			{% endif %}
+		</div>
+	</div>
+		<br>
+		
 		{% if page.layout == "item" %}
 		<a style="padding: 10px;" class="black-under" href="{{ site.baseurl }}/{{page.collection}}.html" class="bigger">
 			<i class="arrow left"></i>
@@ -15,4 +33,8 @@
 		{% endif %}
 
 	</div>
+</div>
+
+
+
 </header>
