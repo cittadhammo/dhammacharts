@@ -1,12 +1,12 @@
-name: Generate Assets and Build Site
+name: Generate Assets and Push to gh-pages
 
 on:
   push:
     branches:
-      - master  # or your default branch
+      - master  # or main
 
 jobs:
-  build:
+  generate-and-push:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,4 +24,13 @@ jobs:
 
       - name: Generate thumbnails and tiles
         run: |
-          ./scripts/generate_assets.sh  # or whatever script uses `vips`
+          ./scripts/generate_assets.sh
+
+      - name: Push to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
+          # Optional: Custom domain
+          # cname: your-domain.com
