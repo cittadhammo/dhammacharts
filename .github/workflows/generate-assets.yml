@@ -1,0 +1,24 @@
+name: Generate Assets and Build Site
+
+on:
+  push:
+    branches:
+      - master  # or your default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install vips
+        run: sudo apt-get update && sudo apt-get install -y libvips
+
+      - name: Install yq
+        run: sudo snap install yq
+
+      - name: Generate thumbnails and tiles
+        run: |
+          ./scripts/generate_assets.sh  # or whatever script uses `vips`

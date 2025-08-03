@@ -11,12 +11,14 @@
             "id": "f27bf2e8cd56e878",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "assets/drawings/Advanced.excalidraw.md"
+                "file": "CHECK.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Advanced.excalidraw"
+              "icon": "lucide-file",
+              "title": "CHECK"
             }
           }
         ]
@@ -183,6 +185,8 @@
   },
   "active": "f27bf2e8cd56e878",
   "lastOpenFiles": [
+    "content/_charts/digital/Khundaka.md",
+    "content/_charts/digital/37-wings-to-awakenings.md",
     "assets/drawings/Advanced.excalidraw.md",
     "assets/drawings/AreaOne.excalidraw.md",
     "assets/drawings/Areas.excalidraw.md",
@@ -191,11 +195,9 @@
     "assets/drawings/Logo.excalidraw.md",
     "assets/drawings/Logo.excalidraw.svg",
     "content/_charts/digital/31-planes-of-existence.md",
-    "content/_charts/digital/37-wings-to-awakenings.md",
     "content/_charts/digital/manual-buddhist-terms.md",
     "assets/images/png/A1S-Pati.png",
     "content/_charts/digital/magga-vibhanga-stupa.md",
-    "content/_charts/digital/Khundaka.md",
     "content/_charts/digital/dhamma-citadel.md",
     "content/_charts/digital/buddha-brain.md",
     "content/_charts/digital/Parivara.md",

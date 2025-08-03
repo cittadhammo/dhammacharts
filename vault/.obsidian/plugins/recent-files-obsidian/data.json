@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "CHECK",
+      "path": "CHECK.md"
+    },
+    {
+      "basename": "Khundaka",
+      "path": "content/_charts/digital/Khundaka.md"
+    },
+    {
+      "basename": "37-wings-to-awakenings",
+      "path": "content/_charts/digital/37-wings-to-awakenings.md"
+    },
+    {
       "basename": "Advanced.excalidraw",
       "path": "assets/drawings/Advanced.excalidraw.md"
     },
@@ -33,16 +45,8 @@
       "path": "content/_charts/digital/31-planes-of-existence.md"
     },
     {
-      "basename": "37-wings-to-awakenings",
-      "path": "content/_charts/digital/37-wings-to-awakenings.md"
-    },
-    {
       "basename": "manual-buddhist-terms",
       "path": "content/_charts/digital/manual-buddhist-terms.md"
-    },
-    {
-      "basename": "CHECK",
-      "path": "CHECK.md"
     },
     {
       "basename": "README",
@@ -79,10 +83,6 @@
     {
       "basename": "magga-vibhanga-stupa",
       "path": "content/_charts/digital/magga-vibhanga-stupa.md"
-    },
-    {
-      "basename": "Khundaka",
-      "path": "content/_charts/digital/Khundaka.md"
     },
     {
       "basename": "dhamma-citadel",

@@ -328,6 +328,7 @@
 
 		&.next {
 			span {
+				text-align: right;
 				&:after {
 					content: "\02192";
 				}
