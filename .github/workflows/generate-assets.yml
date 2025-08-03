@@ -19,6 +19,9 @@ jobs:
       - name: Install yq
         run: sudo snap install yq
 
+      - name: Make script executable
+        run: chmod +x scripts/generate_assets.sh
+
       - name: Generate thumbnails and tiles
         run: |
           ./scripts/generate_assets.sh  # or whatever script uses `vips`
