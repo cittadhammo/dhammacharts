@@ -26,6 +26,12 @@ jobs:
         run: |
           ./scripts/generate_assets.sh
 
+      - name: Remove assets from gitignore for deployment
+        run: |
+          # Temporarily remove asset paths from .gitignore so they can be committed
+          sed -i '/assets\/images\/items\//d' .gitignore
+          # Add any other asset paths you need to remove
+
       - name: Push to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
         with:
