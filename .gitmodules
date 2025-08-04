@@ -1,3 +1,3 @@
 [submodule "assets/images"]
 	path = assets/images
-	url = https://github.com/cittadhammo/dhammacharts-images.git
+ 	url = git@github.com:cittadhammo/dhammacharts-images.git
