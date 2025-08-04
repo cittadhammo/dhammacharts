@@ -122,6 +122,7 @@ layout: none
 '
 
 mkdir -p "$DEST_IMAGE_DIR"
+mkdir -p "$MAPS_HTML_DIR"
 
 # Loop through all markdown files
 find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
