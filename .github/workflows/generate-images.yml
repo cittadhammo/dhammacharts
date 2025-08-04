@@ -8,12 +8,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout main repo
-      uses: actions/checkout@v4
-      with:
-        submodules: recursive
-        token: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Rewrite submodule URL to use SSH
       run: |
         git config submodule.assets/images.url git@github.com:cittadhammo/dhammacharts-images.git
@@ -26,6 +20,14 @@ jobs:
         echo "${{ secrets.SUBMODULE_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
         ssh-keyscan github.com >> ~/.ssh/known_hosts
+ 
+    - name: Checkout main repo
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    
 
     - name: Configure git for submodule commits
       run: |
