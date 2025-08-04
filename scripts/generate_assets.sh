@@ -20,13 +20,13 @@ layout: none
     <style>
         html, body { margin: 0; height: 100%; width: 100%; overflow: hidden; }
         #map { width: 100%; height: 100%; background-color: __BG__; }
-        .ol-control { font-size: 14px; }
-                .cross {
+        .ol-control { font-size: 16px; }
+        .cross {
 			top: 0.5em;
 			right: 0.5em;
             color: #aaaaaa;
 			float: right;
-			font-size: 14px;
+			font-size: 16px;
 			font-weight: bold;
 		}
         .close:hover,
