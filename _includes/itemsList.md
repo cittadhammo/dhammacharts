@@ -14,7 +14,7 @@
           {% assign parent  = item.url | split: "/" | pop | last %}
           {% if parent == category.name %}
             <li class="grid-item {% if item.landscape %}landscape{% endif %}">
-              <a href="{{ item.url }}">
+              <a href="{{ item.url | prepend: site.baseurl }}">
                 <div class="img-wrapper">
                   {% assign image = item.images | first %}
                   <img src="{{ site.baseurl }}assets/images/items/{{ image.name | split: '.' | first }}/medium.png" alt="{{ iamge.name }}" />
