@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-  workflow_dispatch:  # allow manual run
+  workflow_dispatch:  # Allow manual run
 
 jobs:
   generate-assets:
@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true  # Allows git push using GITHUB_TOKEN
 
       - name: Install VIPS
         run: sudo apt-get update && sudo apt-get install -y libvips-tools
@@ -30,9 +32,15 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Stage and commit images
           git add -f assets/images/
           git commit -m "Update generated assets" || echo "No changes to commit"
-          git push
-        env:
-          # Required for pushing back to the repo
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git push origin master
+
+      - name: Cleanup committed assets
+        if: always()
+        run: |
+          git rm -r --cached assets/images/
+          git commit -m "Cleanup: remove temp generated assets" || echo "Nothing to clean"
+          git push origin master
