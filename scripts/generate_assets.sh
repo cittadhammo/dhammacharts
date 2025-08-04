@@ -165,7 +165,9 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
             else
                 echo "Processing $IMG_NAME..."
 
-                read WIDTH HEIGHT <<< $(identify -format "%w %h" "$SRC_IMG_PATH")
+                # read WIDTH HEIGHT <<< $(identify -format "%w %h" "$SRC_IMG_PATH")
+                WIDTH=$(vipsheader -f width "$SRC_IMG_PATH")
+                HEIGHT=$(vipsheader -f height "$SRC_IMG_PATH")
 
                 vips dzsave "$SRC_IMG_PATH" "$TILE_PATH" \
                     --layout google --centre --suffix .png \
