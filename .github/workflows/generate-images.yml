@@ -57,19 +57,8 @@ jobs:
     - name: Generate thumbnails and tiles
       run: ./scripts/generate_assets.sh
 
-    - name: Check if images were updated
-      id: check-images
-      run: |
-        cd assets/images
-        if [ -n "$(git status --porcelain)" ]; then
-          echo "images_changed=true" >> $GITHUB_OUTPUT
-        else
-          echo "images_changed=false" >> $GITHUB_OUTPUT
-        fi
-        cd ../..
 
     - name: Commit and push updated images
-      if: steps.check-images.outputs.images_changed == 'true'
       run: |
         cd assets/images
         git add .
@@ -78,7 +67,6 @@ jobs:
         cd ../..
 
     - name: Update submodule reference in master repo
-      if: steps.check-images.outputs.images_changed == 'true'
       run: |
         git add assets/images
         git commit -m "Update images submodule reference"
