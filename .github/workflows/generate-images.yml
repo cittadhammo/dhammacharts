@@ -3,7 +3,7 @@ name: Generate Assets
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:  # allow manual run
 
 jobs:
