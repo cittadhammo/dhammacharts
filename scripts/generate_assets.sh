@@ -93,7 +93,7 @@ layout: none
                     preload: Infinity,
                     extent: extent,
                     source: new ol.source.TileImage({
-                        url: "{{ site.baseurl }}/assets/images/items/__IMG_NAME__/tiles/{z}/{y}/{x}.png",
+                        url: "{{ site.baseurl }}/assets/images/__IMG_NAME__/tiles/{z}/{y}/{x}.png",
                     })
                 })
             ],
