@@ -29,7 +29,7 @@ jobs:
       - name: Remove assets from gitignore for deployment
         run: |
           sed -i '/assets\/images\/items\//d' .gitignore
-          sed -i 's|^baseurl:.*|baseurl: https://cittadhammo.github.io/dhammacharts/|' _config.yml
+          sed -i 's|^baseurl:.*|baseurl: https://cittadhammo.github.io/dhammacharts|' _config.yml
 
       - name: Push to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
