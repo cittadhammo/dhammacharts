@@ -13,11 +13,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         
-      - name: Install VIPS
-        run: sudo apt-get update && sudo apt-get install -y libvips-tools
+      - name: Setup VIPS
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: libvips-tools
+          version: 1.0
 
       - name: Install yq
-        run: sudo snap install yq
+        uses: mikefarah/yq@master
 
       - name: Make script executable
         run: chmod +x scripts/generate_assets.sh
@@ -28,9 +31,8 @@ jobs:
 
       - name: Remove assets from gitignore for deployment
         run: |
-          # Temporarily remove asset paths from .gitignore so they can be committed
           sed -i '/assets\/images\/items\//d' .gitignore
-          # Add any other asset paths you need to remove
+          sed -i 's/^baseurl:.*/baseurl: https://cittadhammo.github.io/dhammacharts/' _config.yml
 
       - name: Push to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
@@ -38,6 +40,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
           publish_branch: gh-pages
-          enable_jekyll: true  # <-- Prevents .nojekyll from being added
           # Optional: Custom domain
           # cname: your-domain.com
