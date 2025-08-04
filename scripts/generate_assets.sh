@@ -2,7 +2,7 @@
 set -e
 
 SRC_IMAGE_DIR="./vault/assets/images/"
-DEST_IMAGE_DIR="./assets/images/items"
+DEST_IMAGE_DIR="./assets/images"
 MD_DIR="./vault/content" 
 MAPS_HTML_DIR="./maps"
 TEMPLATE_HTML='---
@@ -93,7 +93,7 @@ layout: none
                     preload: Infinity,
                     extent: extent,
                     source: new ol.source.TileImage({
-                        url: "{{ site.baseurl }}/assets/images/items/__IMG_NAME__/tiles/{z}/{y}/{x}.png",
+                        url: "{{ site.baseurl }}/assets/images/__IMG_NAME__/tiles/{z}/{y}/{x}.png",
                     })
                 })
             ],
@@ -122,6 +122,7 @@ layout: none
 '
 
 mkdir -p "$DEST_IMAGE_DIR"
+mkdir -p "$MAPS_HTML_DIR"
 
 # Loop through all markdown files
 find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
@@ -165,7 +166,9 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
             else
                 echo "Processing $IMG_NAME..."
 
-                read WIDTH HEIGHT <<< $(identify -format "%w %h" "$SRC_IMG_PATH")
+                # read WIDTH HEIGHT <<< $(identify -format "%w %h" "$SRC_IMG_PATH")
+                WIDTH=$(vipsheader -f width "$SRC_IMG_PATH")
+                HEIGHT=$(vipsheader -f height "$SRC_IMG_PATH")
 
                 vips dzsave "$SRC_IMG_PATH" "$TILE_PATH" \
                     --layout google --centre --suffix .png \
