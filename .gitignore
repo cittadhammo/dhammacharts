@@ -16,5 +16,4 @@ _site/
 *.sql
 *.sqlite
 
-assets/images/items/
 # Ignore all images in the items directory

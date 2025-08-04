@@ -1,0 +1,66 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout main repo
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Configure git for submodule commits
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+    - name: Install VIPS
+      run: sudo apt-get update && sudo apt-get install -y libvips-tools
+
+    - name: Install yq
+      run: sudo snap install yq
+
+    - name: Make script executable
+      run: chmod +x scripts/generate_assets.sh
+
+    - name: Pull latest images from submodule
+      run: |
+        cd assets/images
+        git checkout main  # or master
+        git pull origin main
+        cd ../..
+
+    - name: Generate thumbnails and tiles
+      run: ./scripts/generate_assets.sh
+
+    - name: Check if images were updated
+      id: check-images
+      run: |
+        cd assets/images
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "images_changed=true" >> $GITHUB_OUTPUT
+        else
+          echo "images_changed=false" >> $GITHUB_OUTPUT
+        fi
+        cd ../..
+
+    - name: Commit and push updated images
+      if: steps.check-images.outputs.images_changed == 'true'
+      run: |
+        cd assets/images
+        git add .
+        git commit -m "Auto-update images from main repo commit ${{ github.sha }}"
+        git push origin main
+        cd ../..
+
+    - name: Update submodule reference in main repo
+      if: steps.check-images.outputs.images_changed == 'true'
+      run: |
+        git add assets/images
+        git commit -m "Update images submodule reference"
+        git push origin main
