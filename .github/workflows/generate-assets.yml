@@ -30,7 +30,7 @@ jobs:
         run: |
           # Temporarily remove asset paths from .gitignore so they can be committed
           sed -i '/assets\/images\/items\//d' .gitignore
-          sed -i 's/^baseurl:.*/baseurl: https://cittadhammo.github.io/dhammacharts/' filename
+          sed -i 's/^baseurl:.*/baseurl: https://cittadhammo.github.io/dhammacharts/' _config.yml
           # Add any other asset paths you need to remove
 
       - name: Push to gh-pages branch
