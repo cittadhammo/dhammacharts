@@ -7,6 +7,7 @@ email: "dhammacharts@protonmail.com"
 # Site config
 # baseurl: "https://www.dhammacharts.org/old-website"
 baseurl: https://cittadhammo.github.io/dhammacharts
+url: "https://cittadhammo.github.io"
 highlighter: rouge
 sass:
   sass_dir: assets/scss

@@ -37,7 +37,7 @@ Pineaple Jekyll template for this website
 
 Run: `jekyll serve` no need to `bundle install` or `bundle exec jekyll serve` on this repo.
 
-`jekyll serve --livereload` for live reload.
+`jekyll serve --livereload --config _config.yml,_config_local.yml` for live reload.
 
 Change `baseurl` in `_confilg.yml` to: `` if it is the root folder for the website.
 
