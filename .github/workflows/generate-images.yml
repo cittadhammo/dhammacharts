@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout main repo
+    - name: Checkout master repo
       uses: actions/checkout@v4
       with:
         submodules: false
@@ -50,8 +50,8 @@ jobs:
     - name: Pull latest images from submodule
       run: |
         cd assets/images
-        git checkout main  # or master
-        git pull origin main
+        git checkout master  # or master
+        git pull origin master
         cd ../..
 
     - name: Generate thumbnails and tiles
@@ -73,11 +73,11 @@ jobs:
       run: |
         cd assets/images
         git add .
-        git commit -m "Auto-update images from main repo commit ${{ github.sha }}"
+        git commit -m "Auto-update images from master repo commit ${{ github.sha }}"
         git push origin master
         cd ../..
 
-    - name: Update submodule reference in main repo
+    - name: Update submodule reference in master repo
       if: steps.check-images.outputs.images_changed == 'true'
       run: |
         git add assets/images
