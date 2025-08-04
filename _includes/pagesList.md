@@ -2,6 +2,6 @@
 
 {% for page in pages %}
 
-- <a href="{{ page.url }}"> {{ page.title }} </a>
+- <a href="{{ page.url | prepend: site.baseurl }}"> {{ page.title }} </a>
 
 {% endfor %}
