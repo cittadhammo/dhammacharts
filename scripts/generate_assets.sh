@@ -56,7 +56,7 @@ layout: none
             {% for doc in docs %}
                 {% if doc.path == "__PATHMD__" %}
                     console.log("{{doc.path}}")
-                    {% assign link = doc.url %}
+                    {% assign link = doc.url | prepend: site.baseurl %}
                 {% endif %}
             {% endfor %}    
         {% endfor %}
