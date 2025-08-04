@@ -74,7 +74,7 @@ jobs:
         cd assets/images
         git add .
         git commit -m "Auto-update images from main repo commit ${{ github.sha }}"
-        git push origin main
+        git push origin master
         cd ../..
 
     - name: Update submodule reference in main repo
@@ -82,4 +82,4 @@ jobs:
       run: |
         git add assets/images
         git commit -m "Update images submodule reference"
-        git push origin main
+        git push origin master
