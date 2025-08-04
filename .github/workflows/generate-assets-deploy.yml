@@ -1,0 +1,43 @@
+name: Generate Assets, Build and Deploy Jekyll Site (No Bundler)
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  generate-assets:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install VIPS
+        run: sudo apt-get update && sudo apt-get install -y libvips-tools
+
+      - name: Install yq
+        run: sudo snap install yq
+
+      - name: Make script executable
+        run: chmod +x scripts/generate_assets.sh
+
+      - name: Generate thumbnails and tiles
+        run: ./scripts/generate_assets.sh
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'  # or latest stable
+
+      - name: Install Jekyll
+        run: gem install jekyll
+
+      - name: Build site
+        run: jekyll build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site

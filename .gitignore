@@ -17,5 +17,5 @@ _site/
 *.sqlite
 
 assets/images/
-
+maps/
 # Ignore all images in the items directory
