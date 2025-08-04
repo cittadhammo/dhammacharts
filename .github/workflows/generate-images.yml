@@ -13,11 +13,6 @@ jobs:
       with:
         submodules: false
 
-    - name: Rewrite submodule URL to use SSH
-      run: |
-        git config submodule.assets/images.url git@github.com:cittadhammo/dhammacharts-images.git
-        git submodule sync --recursive
-        git submodule update --init --recursive
 
     - name: Set up SSH for submodule push
       run: |
@@ -25,6 +20,12 @@ jobs:
         echo "${{ secrets.SUBMODULE_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
         ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+
+    - name: Rewrite submodule URL to use SSH
+      run: |
+        git config submodule.assets/images.url git@github.com:cittadhammo/dhammacharts-images.git
+
 
     - name: Init and update submodule manually
       run: |
