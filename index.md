@@ -3,7 +3,9 @@ layout: home
 title: Home
 ---
 
-## Areas
+<h1 class="cover-title" > DhammaCharts </h1>
+ 
+<img class= "cover" src="{{ site.baseurl }}/assets/icons/logo.png" alt="Cover">
 
 {% for area in site.data.areas %}
 <div style="text-align: center;">

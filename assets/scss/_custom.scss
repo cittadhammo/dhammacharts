@@ -196,3 +196,17 @@ a.bigger {
     margin: 0; // optional: to reduce spacing
   }
 }
+
+.cover{
+	  display: block;
+      margin: 0 auto;
+	  margin-bottom: 6rem;
+}
+
+.cover-title {
+  text-align: center;
+  font-size: 3rem; // Adjust as needed
+  color: black; // or any color you prefer
+  margin-top: 16rem;
+  margin-bottom: 2rem; // Optional: to add some space above the title
+}
