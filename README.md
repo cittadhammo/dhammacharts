@@ -12,6 +12,14 @@ in the areas.yml)
 
 Categories of the items are extracted via their path.
 
+## Scripts
+
+```
+make serve      # Starts Jekyll with livereload
+make assets     # Runs your searchAndMap.sh script
+make images   # Runs the Python script inside the vault directory
+```
+
 ## Generating assets
 
 - Every original images in the assets that are listed in the frontmatter `images` of the pages
