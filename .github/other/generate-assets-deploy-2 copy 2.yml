@@ -1,4 +1,4 @@
-name: Deploy Site
+name: Generate Assets, Build and Deploy Jekyll Site (No Bundler)
 
 on:
   push:
@@ -6,11 +6,11 @@ on:
       - master
 
 jobs:
-  build-and-deploy:
+  generate-assets:
     runs-on: ubuntu-latest
-    if: contains(github.event.head_commit.message, 'gh-pages') || contains(github.event.head_commit.message, 'cf-pages')
+
     steps:
-      - name: Checkout code
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Install VIPS
@@ -22,6 +22,7 @@ jobs:
           curl -L "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64" -o yq
           chmod +x yq
           sudo mv yq /usr/local/bin/yq
+
 
       - name: Make script executable
         run: chmod +x scripts/generate_assets.sh
@@ -37,24 +38,11 @@ jobs:
       - name: Install Jekyll
         run: gem install jekyll
 
-      - name: Build Jekyll site
-        run: |
-          jekyll build --config _config.yml,_config_${{ contains(github.event.head_commit.message, 'cf-pages') && 'cdn' || 'gh' }}.yml
+      - name: Build site
+        run: jekyll build
 
       - name: Deploy to GitHub Pages
-        if: contains(github.event.head_commit.message, 'gh-pages')
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
-          publish_branch: gh-pages  # default: gh-pages
-
-
-
-      - name: Push to cf-pages branch
-        if: contains(github.event.head_commit.message, 'cf-pages')
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          publish_branch: cf-pages  # default: gh-pages
