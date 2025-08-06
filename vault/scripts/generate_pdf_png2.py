@@ -148,22 +148,6 @@ def convert_pdf_to_png(pdf_file, png_output_path, page_w_mm, page_h_mm):
     pix.save(str(png_output_path))
     doc.close()
 
-def compress_png_with_pngquant(png_path):
-    """Compress PNG file using pngquant with quality 70-90%"""
-    try:
-        subprocess.run([
-            "pngquant",
-            "--force",
-            "--ext", ".png",
-            "--quality=70-90",
-            str(png_path)
-        ], check=True)
-        print(f"Compressed PNG with pngquant: {png_path.name}")
-    except subprocess.CalledProcessError as e:
-        print(f"Warning: pngquant failed for {png_path.name}: {e}")
-    except FileNotFoundError:
-        print(f"Warning: pngquant not found. Skipping compression for {png_path.name}")
-
 # === Main loop ===
 for svg_path in svg_dir.glob("*.svg"):
     base_name = svg_path.stem
@@ -228,9 +212,6 @@ for svg_path in svg_dir.glob("*.svg"):
 
         convert_pdf_to_png(pdf_path, png_path, page_w_mm, page_h_mm)
         print(f"Generated PNG: {png_path}")
-
-        # Compress the PNG immediately after generation
-        compress_png_with_pngquant(png_path)
 
     except Exception as e:
         print(f"Error processing {svg_path.name}: {e}")

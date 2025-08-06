@@ -23,7 +23,6 @@ jobs:
           chmod +x yq
           sudo mv yq /usr/local/bin/yq
 
-
       - name: Make script executable
         run: chmod +x scripts/generate_assets.sh
 
@@ -52,6 +51,10 @@ jobs:
       - name: Push to cf-pages branch
         if: contains(github.event.head_commit.message, 'cf-pages')
         run: |
+          # Clean up any uncommitted changes first
+          git reset --hard HEAD
+          git clean -fd
+          
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
