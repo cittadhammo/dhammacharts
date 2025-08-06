@@ -46,22 +46,17 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: .
+          publish_branch: gh-pages
+          # Optional: Custom domain
+          # cname: your-domain.com
 
       - name: Push to cf-pages branch
         if: contains(github.event.head_commit.message, 'cf-pages')
-        run: |
-          # Clean up any uncommitted changes first
-          git reset --hard HEAD
-          git clean -fd
-          
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git switch --orphan cf-pages
-          git rm -rf .
-          cp -r _site/* .
-          touch .nojekyll
-          git add .
-          git commit -m "Deploy to cf-pages"
-          git push -f origin cf-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: cf-pages
+          # Optional: Custom domain
+          # cname: your-domain.com
