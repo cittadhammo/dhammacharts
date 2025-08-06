@@ -40,7 +40,7 @@ jobs:
 
       - name: Build Jekyll site
         run: |
-          jekyll build --config _config.yml,_config-${{ contains(github.event.head_commit.message, 'cf-pages') && 'cdn' || 'gh' }}.yml
+          jekyll build --config _config.yml,_config_${{ contains(github.event.head_commit.message, 'cf-pages') && 'cdn' || 'gh' }}.yml
 
       - name: Deploy to GitHub Pages
         if: contains(github.event.head_commit.message, 'gh-pages')
