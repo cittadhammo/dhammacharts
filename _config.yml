@@ -60,3 +60,6 @@ exclude:
   - vendor/ruby
   - script/
   - vault/
+  - Makefile
+  - build.sh
+  - scripts/
