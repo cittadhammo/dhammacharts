@@ -1,30 +1,29 @@
-name: Generate Assets, Build and Deploy Jekyll Site (No Bundler)
+name: Build and Deploy Jekyll Site to GitHub or Cloudflare
 
 on:
   push:
+    tags:
+      - 'gh-pages'
+      - 'cloudflare'
     branches:
       - master
 
 jobs:
-  generate-assets:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install VIPS
-        run: sudo apt-get update && sudo apt-get install -y libvips-tools
-
-      - name: Install yq
+      - name: Install dependencies (libvips, yq)
         run: |
-          YQ_VERSION=v4.43.1
-          curl -L "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64" -o yq
-          chmod +x yq
-          sudo mv yq /usr/local/bin/yq
+          sudo apt-get update
+          sudo apt-get install -y libvips-tools
+          sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
+          sudo chmod +x /usr/local/bin/yq
 
-
-      - name: Make script executable
+      - name: Make asset script executable
         run: chmod +x scripts/generate_assets.sh
 
       - name: Generate thumbnails and tiles
@@ -33,16 +32,22 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'  # or latest stable
+          ruby-version: '3.2'
 
       - name: Install Jekyll
         run: gem install jekyll
 
-      - name: Build site
-        run: jekyll build
+      - name: Build Jekyll Site
+        run: |
+          if [[ "${GITHUB_REF_NAME}" == "cloudflare" ]]; then
+            jekyll build --config _config.yml,_config-cdn.yml
+          else
+            jekyll build
+          fi
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to appropriate branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
+          publish_branch: ${{ github.ref_name == 'cloudflare' && 'cf-pages' || 'gh-pages' }}

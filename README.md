@@ -67,3 +67,15 @@ wget \
   http://localhost:4000/
 ```
 
+##
+
+```
+# Create a tag for GitHub Pages:
+git tag gh-pages
+git push origin gh-pages
+
+# Or for Cloudflare:
+git tag cloudflare
+git push origin cloudflare
+
+```
