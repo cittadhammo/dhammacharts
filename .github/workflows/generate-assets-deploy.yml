@@ -1,53 +1,53 @@
-name: Build and Deploy Jekyll Site to GitHub or Cloudflare
+name: Deploy Site
 
 on:
   push:
-    tags:
-      - 'gh-pages'
-      - 'cloudflare'
     branches:
       - master
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
+    if: contains(github.event.head_commit.message, 'gh-pages') || contains(github.event.head_commit.message, 'cf-pages')
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Install dependencies (libvips, yq)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libvips-tools
-          sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
-          sudo chmod +x /usr/local/bin/yq
-
-      - name: Make asset script executable
-        run: chmod +x scripts/generate_assets.sh
-
-      - name: Generate thumbnails and tiles
-        run: ./scripts/generate_assets.sh
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
+          ruby-version: 3.1
 
-      - name: Install Jekyll
-        run: gem install jekyll
-
-      - name: Build Jekyll Site
+      - name: Install Jekyll and Bundler
         run: |
-          if [[ "${GITHUB_REF_NAME}" == "cloudflare" ]]; then
-            jekyll build --config _config.yml,_config-cdn.yml
-          else
-            jekyll build
-          fi
+          gem install jekyll bundler
 
-      - name: Deploy to appropriate branch
+      - name: Generate assets
+        run: |
+          chmod +x scripts/generate_assets.sh
+          ./scripts/generate_assets.sh
+
+      - name: Build Jekyll site
+        run: |
+          jekyll build --config _config.yml,_config-${{ contains(github.event.head_commit.message, 'cf-pages') && 'cdn' || 'gh' }}.yml
+
+      - name: Deploy to GitHub Pages
+        if: contains(github.event.head_commit.message, 'gh-pages')
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
-          publish_branch: ${{ github.ref_name == 'cloudflare' && 'cf-pages' || 'gh-pages' }}
+
+      - name: Push to cf-pages branch
+        if: contains(github.event.head_commit.message, 'cf-pages')
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git switch --orphan cf-pages
+          git rm -rf .
+          cp -r _site/* .
+          touch .nojekyll
+          git add .
+          git commit -m "Deploy to cf-pages"
+          git push -f origin cf-pages
