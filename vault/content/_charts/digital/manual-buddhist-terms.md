@@ -13,17 +13,17 @@ sources:
   - name: The Manual of Buddhist Terms & Doctrines
     author: Nyanatiloka Thera
     links:
-	  - name: PDF
-	    url: https://www.buddhistelibrary.org/buddhism-online/e-books/palidictionary.pdf
-	  - name: PDF 2
-	    url: https://buddhistuniversity.net/content/reference/buddhist-dictionary_nyanatiloka
-	  - name: Web
-	    url: https://www.palikanon.com/english/wtb/dic_idx.html
+      - name: PDF
+        url: https://www.buddhistelibrary.org/buddhism-online/e-books/palidictionary.pdf
+      - name: PDF 2
+        url: https://buddhistuniversity.net/content/reference/buddhist-dictionary_nyanatiloka
+      - name: Web
+        url: https://www.palikanon.com/english/wtb/dic_idx.html
   - name: Research Paper
     author: Yuntao Jia, Michael Garland, J. Hart
     links:
-	  - name: PDF
-	    url: https://www.semanticscholar.org/paper/Hierarchical-Edge-Bundles-for-General-Graphs-Jia-Garland/31f3ae917eaf2c1562274356cf7759d6a547cb69
+      - name: PDF
+        url: https://www.semanticscholar.org/paper/Hierarchical-Edge-Bundles-for-General-Graphs-Jia-Garland/31f3ae917eaf2c1562274356cf7759d6a547cb69
 code: 
   - name: Notebook
     url: https://observablehq.com/d/2d1af81c02434761

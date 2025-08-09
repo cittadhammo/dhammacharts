@@ -17,7 +17,7 @@
               <a href="{{ item.url | prepend: site.baseurl }}">
                 <div class="img-wrapper">
                   {% assign image = item.images | first %}
-                  <img src="{{ site.baseurl }}/assets/images/{{ image.name | split: '.' | first }}/medium.png" alt="{{ iamge.name }}" />
+                  <img src="{{ site.baseurl }}/assets/images/{{ image.name | split: '.' | first }}/medium.png" alt="{{ image.name }}" />
                 </div>
                 <span class="h2">{{ item.type }}</span>
                 <h3>{{ item.title }}</h3>
@@ -29,17 +29,17 @@
     </div>
   </section>
 
-  <script>
-    var grid_{{ category.name | replace: "-", "_" }} = document.querySelector('.{{ category.name }}');
-    var msnry_{{ category.name | replace: "-", "_" }};
+<script>
+  var grid_{{ category.name | replace: "-", "_" }} = document.querySelector('.{{ category.name }}');
+  var msnry_{{ category.name | replace: "-", "_" }};
 
-    imagesLoaded(grid_{{ category.name | replace: "-", "_" }}, function() {
-      msnry_{{ category.name | replace: "-", "_" }} = new Masonry(grid_{{ category.name | replace: "-", "_"}}, {
-        itemSelector: '.grid-item',
-        percentPosition: true
-      });
+  imagesLoaded(grid_{{ category.name | replace: "-", "_" }}, function() {
+    msnry_{{ category.name | replace: "-", "_" }} = new Masonry(grid_{{ category.name | replace: "-", "_"}}, {
+      itemSelector: '.grid-item',
+      percentPosition: true
     });
-  </script>
+  });
+</script>
 {% endfor %}
 
 
