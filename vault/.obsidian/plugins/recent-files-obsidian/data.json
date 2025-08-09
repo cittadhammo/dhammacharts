@@ -1,6 +1,22 @@
 {
   "recentFiles": [
     {
+      "basename": "manual-buddhist-termsPali Parsing Algorithm",
+      "path": "content/_charts/digital/manual-buddhist-termsPali Parsing Algorithm.md"
+    },
+    {
+      "basename": "manual-buddhist-terms",
+      "path": "content/_charts/digital/manual-buddhist-terms.md"
+    },
+    {
+      "basename": "pali-parsing",
+      "path": "content/_projects/algorithms/pali-parsing.md"
+    },
+    {
+      "basename": "paper-laptop",
+      "path": "content/_projects/craft/paper-laptop.md"
+    },
+    {
       "basename": "CHECK",
       "path": "CHECK.md"
     },
@@ -43,10 +59,6 @@
     {
       "basename": "31-planes-of-existence",
       "path": "content/_charts/digital/31-planes-of-existence.md"
-    },
-    {
-      "basename": "manual-buddhist-terms",
-      "path": "content/_charts/digital/manual-buddhist-terms.md"
     },
     {
       "basename": "README",
@@ -187,18 +199,6 @@
     {
       "basename": "FLTM",
       "path": "content/Writings/FLTM.md"
-    },
-    {
-      "basename": "Great Illusion Monastery Constitution",
-      "path": "content/Writings/Great Illusion Monastery Constitution.md"
-    },
-    {
-      "basename": "The Dhamma Citadel",
-      "path": "content/Charts/Digital/The Dhamma Citadel.md"
-    },
-    {
-      "basename": "DhammaCitadel",
-      "path": "assets/images/DhammaCitadel.png"
     }
   ],
   "omittedPaths": [],
