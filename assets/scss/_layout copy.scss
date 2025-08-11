@@ -77,77 +77,100 @@
 }
 
 .projects-list {
-  column-count: 3;       /* Number of columns at large screen */
-  column-gap: 1.5rem;    /* Space between columns */
-  list-style: none;
-  padding: 0;
-  margin: 0;
 
-  li {
-    break-inside: avoid;  /* Prevent item from being split across columns */
-    margin-bottom: 1.5rem;
-    display: inline-block; /* Ensures correct rendering in columns */
-    width: 100%;           /* Full width inside the column */
-  }
+	li {
+		width: 100%;
+	}
 
-  @media (max-width: 900px) {
-    column-count: 2;
-  }
+	@media (min-width: variables.$breakpoint-small) {
+		margin-left: -1.5rem;
+		margin-right: -1.5rem;
+		@include mixins.clearfix;
 
-  @media (max-width: 600px) {
-    column-count: 1;
-  }
+		li {
+			width: 50%;
+		}
+		
 
-  a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-  }
+		a {
+			padding: 0 1.5rem;
+		}
+	}
 
-  .img-wrapper {
-    position: relative;
+	@media (min-width: variables.$breakpoint-medium) {
+		li {
+			width: 33.33333%;
+		}
+	}
 
-    &:before {
-      content: "View Chart";
-      color: variables.$color-white;
-      @extend .h2;
-      font-weight: 800;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      transition: all .5s ease-in-out .25s;
-      z-index: 2;
-    }
+	li {
+		margin-bottom: 3rem;
 
-    &:after {
-      background: #000;
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: all .5s ease-in-out;
-      z-index: 1;
-    }
-  }
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 
-  a:hover .img-wrapper {
-    &:before { opacity: 1; }
-    &:after  { opacity: .45; }
-  }
+	a {
+		display: block;
 
-  img {
-    width: 100%;
-    display: block;
-  }
+		&:hover {
+			.img-wrapper {
+				&:before {
+					opacity: 1;
+				}
+				&:after {
+					opacity: .45;
+				}
+			}
+		}
+	}
 
-  span {
-    margin: 1rem 0 .5rem;
-    display: block;
-  }
+	.img-wrapper {
+		position: relative;
+
+		&:before {
+			content: "View Chart";
+			color: variables.$color-white;
+			@extend .h2;
+			font-weight: 800;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -.5rem;
+			margin-left: -4.4rem;
+			opacity: 0;
+			-webkit-transition: all .5s ease-in-out;
+    		transition: all .5s ease-in-out;
+    		-webkit-transition-delay: .25s;
+    		transition-delay: .25s;
+    		z-index: 2;
+		}
+
+		&:after {
+			background: #000;
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			opacity: 0;
+			-webkit-transition: all .5s ease-in-out;
+    		transition: all .5s ease-in-out;
+    		z-index: 1;
+		}
+	}
+
+	img {
+		width: 100%;
+	}
+
+	span {
+		margin: 1rem 0 .5rem;
+	}
 }
-
 
 .project {
 	left: 0;

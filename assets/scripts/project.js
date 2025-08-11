@@ -17,15 +17,15 @@
 		}
 	});
 
-	// var sr = ScrollReveal({
-	// 	origin   : "bottom",
-	// 	distance : "64px",
-	// 	duration : 900,
-	// 	delay    : 0,
-	// 	scale    : 1
-	// });
+	var sr = ScrollReveal({
+		origin   : "bottom",
+		distance : "64px",
+		duration : 900,
+		delay    : 0,
+		scale    : 1
+	});
 
-	// sr.reveal('.project li');
+	sr.reveal('.project img');
 
 	const article = $("article");
 	const height = article.height() + 48;

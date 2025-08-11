@@ -1,6 +1,6 @@
 
 
-{% include itemsList2.md area = page.area %}
+{% include itemsList3.md area = page.area %}
 
 ---
 ## Pages
