@@ -17,8 +17,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="/assets/css/style.css">
-<script src="/assets/scripts/vendor/masonry.pkgd.min.js"></script>
-<script src="/assets/scripts/vendor/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
 
 </head>
 
@@ -27,11 +26,11 @@
 
 <div class="container blackhead">
 	<div class="logo-and-title-container">
-		<a href="/">
-			<img src="/assets/icons/logo.png" alt="DhammaCharts" style="max-height: 50px;">
-		</a>
+		<!-- <a href="/">
+			<img src="/assets/icons/logoR.png" alt="DhammaCharts" style="max-height: 50px;">
+		</a> -->
 		<div class="title-group">
-			<h1 class="logo">
+			<h1 class="logo rouge-first">
 				<a  title="DhammaCharts" href="/">DhammaCharts</a>
 			</h1>
 			
@@ -54,20 +53,18 @@
 </header>
   <main class="home">
 
-    <section class="projects">
-      <div class="container">
         
 <section class="projects">
     <div class="container">
       <h1 class="cat-title projects">Stupas</h1>
-      <ul class="projects-list stupas">
+      <ul class="projects-list">
         
           
           
         
           
           
-            <li class="grid-item ">
+            <li class="load-hidden">&gt;
               <a href="/3d-printing/stupas/stupa-concrete-3d.html">
                 <div class="img-wrapper">
                   
@@ -83,22 +80,10 @@
     </div>
   </section>
 
-<script>
-  var grid_stupas = document.querySelector('.stupas');
-  var msnry_stupas;
-
-  imagesLoaded(grid_stupas, function() {
-    msnry_stupas = new Masonry(grid_stupas, {
-      itemSelector: '.grid-item',
-      percentPosition: true
-    });
-  });
-</script>
-
 <section class="projects">
     <div class="container">
       <h1 class="cat-title projects">Monk</h1>
-      <ul class="projects-list monk">
+      <ul class="projects-list">
         
           
           
@@ -110,26 +95,14 @@
     </div>
   </section>
 
-<script>
-  var grid_monk = document.querySelector('.monk');
-  var msnry_monk;
-
-  imagesLoaded(grid_monk, function() {
-    msnry_monk = new Masonry(grid_monk, {
-      itemSelector: '.grid-item',
-      percentPosition: true
-    });
-  });
-</script>
-
 <section class="projects">
     <div class="container">
       <h1 class="cat-title projects">Other</h1>
-      <ul class="projects-list other">
+      <ul class="projects-list">
         
           
           
-            <li class="grid-item ">
+            <li class="load-hidden">&gt;
               <a href="/3d-printing/other/dhamma-citadel-3d.html">
                 <div class="img-wrapper">
                   
@@ -148,26 +121,13 @@
     </div>
   </section>
 
-<script>
-  var grid_other = document.querySelector('.other');
-  var msnry_other;
-
-  imagesLoaded(grid_other, function() {
-    msnry_other = new Masonry(grid_other, {
-      itemSelector: '.grid-item',
-      percentPosition: true
-    });
-  });
-</script>
-
 <hr />
 <h2 id="pages">Pages</h2>
 
 <hr />
 
 
-      </div>
-    </section>
+
   </main>
   <!-- <footer class="footer">
 	<div class="container">
