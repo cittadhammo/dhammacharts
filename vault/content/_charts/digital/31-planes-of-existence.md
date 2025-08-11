@@ -4,6 +4,7 @@ license: CC0
 tech: D3
 description: 
 year:
+type: Pie Chart
 images: 
   - name: A1S-31Planes.png
     map: true

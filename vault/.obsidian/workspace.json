@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CHECK.md",
+                "file": "content/_charts/digital/vinaya-pitaka.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CHECK"
+              "title": "vinaya-pitaka"
             }
           }
         ]
@@ -185,8 +185,26 @@
   },
   "active": "f27bf2e8cd56e878",
   "lastOpenFiles": [
+    "content/_charts/digital/sutta-pitaka.md",
+    "content/_charts/digital/sutta-parallels.md",
+    "content/_charts/digital/patimokkha-structure.md",
+    "content/_charts/digital/patimokkha-categories.md",
+    "content/_charts/digital/path-to-nibbana.md",
+    "content/_charts/digital/Parivara.md",
+    "content/_charts/digital/manual-buddhist-terms.md",
+    "content/_charts/digital/magga-vibhanga-stupa.md",
     "content/_charts/digital/Khundaka.md",
+    "content/_charts/digital/dhamma-citadel.md",
+    "content/_charts/digital/buddha-brain.md",
     "content/_charts/digital/37-wings-to-awakenings.md",
+    "content/_charts/digital/31-planes-of-existence.md",
+    "content/_charts/digital/vinaya-pitaka.md",
+    "assets/images/A0VM-SuttaPitaka.png",
+    "assets/images/A1S-31Planes.png",
+    "assets/images/A1S-Pati.png",
+    "assets/images/A1SM-BuddhaBrain.png",
+    "assets/images/A1SM-PatiCat.png",
+    "CHECK.md",
     "assets/drawings/Advanced.excalidraw.md",
     "assets/drawings/AreaOne.excalidraw.md",
     "assets/drawings/Areas.excalidraw.md",
@@ -194,16 +212,9 @@
     "assets/drawings/Cover.excalidraw.md",
     "assets/drawings/Logo.excalidraw.md",
     "assets/drawings/Logo.excalidraw.svg",
-    "content/_charts/digital/31-planes-of-existence.md",
-    "content/_charts/digital/manual-buddhist-terms.md",
     "assets/images/png/A1S-Pati.png",
-    "content/_charts/digital/magga-vibhanga-stupa.md",
-    "content/_charts/digital/dhamma-citadel.md",
-    "content/_charts/digital/buddha-brain.md",
-    "content/_charts/digital/Parivara.md",
     "content/_projects/Websites/DhammaCharts.org.md",
     "README.md",
-    "CHECK.md",
     "content/_3d-printing/other/dhamma-citadel-3d.md",
     "content/_3d-printing/fractals",
     "script/token.rtf",
