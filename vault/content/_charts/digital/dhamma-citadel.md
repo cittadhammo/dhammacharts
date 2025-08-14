@@ -6,4 +6,5 @@ license: CC0
 description: Enter description here
 images:
   - name: A0SM-DhammaCitadel.png
+    map: true
 ---

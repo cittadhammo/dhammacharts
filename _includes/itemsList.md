@@ -17,7 +17,7 @@
               <a href="{{ item.url | prepend: site.baseurl }}">
                 <div class="img-wrapper">
                   {% assign image = item.images | first %}
-                  <img src="{{ site.baseurl }}/assets/images/{{ image.name | split: '.' | first }}/medium.png" alt="{{ image.name }}" />
+                  <img src="{{ site.baseurl }}/assets/images/{{ image.name | split: '.' | first }}/small.{{site.img_ext}}" alt="{{ image.name }}" />
                 </div>
                 <span class="h2">{{ item.type }}</span>
                 <h3>{{ item.title }}</h3>

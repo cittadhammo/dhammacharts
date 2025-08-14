@@ -6,7 +6,7 @@ email: "dhammacharts@protonmail.com"
 
 # Site config
 # baseurl: "https://www.dhammacharts.org/old-website"
-baseurl: "/dhammacharts"
+baseurl: "http://127.0.0.1:5500/_site"
 url: "https://cittadhammo.github.io"
 highlighter: rouge
 sass:
@@ -16,6 +16,9 @@ sass:
 # Config file
 collections_dir: vault/content
 data_dir: vault/data
+img_ext: webp # Default image extension for charts and diagrams thumbnails
+# img_ext: jpg # Default image extension for charts and diagrams thumbnails
+# img_ext: "png" # Default image extension for charts and diagrams thumbnails
 
 # The collections represent the areas of the websites.
 # Add collections below if you add a new _collection folder into content[:w

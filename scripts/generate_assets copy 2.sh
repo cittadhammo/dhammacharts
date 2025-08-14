@@ -93,7 +93,7 @@ layout: none
                     preload: Infinity,
                     extent: extent,
                     source: new ol.source.TileImage({
-                        url: "{{ site.baseurl }}/assets/images/__IMG_NAME__/tiles/{z}/{y}/{x}.webp",
+                        url: "{{ site.baseurl }}/assets/images/__IMG_NAME__/tiles/{z}/{y}/{x}.png",
                     })
                 })
             ],
@@ -153,6 +153,16 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
         cp "$SRC_IMG_PATH" "$DEST_FOLDER/$IMG_NAME"
         # cp "$SRC_IMG_PATH" "$DEST_FOLDER/original.$EXT"
 
+        # Generate optimized thumbnails - PNG for charts/diagrams, WebP as fallback
+        # vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/small.png[compression=9]" 400 --intent relative
+        # vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/medium.png[compression=9]" 800 --intent relative
+        # vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/large.png[compression=9]" 1600 --intent relative
+
+
+        # vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/small.$EXT" 300
+        # vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/medium.$EXT" 800
+        # vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/large.$EXT" 1600
+
         # Generate WebP near-lossless thumbnails - perfect for charts/diagrams
         vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/small.webp[Q=95,near_lossless=true]" 400 --intent relative
         vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/medium.webp[Q=95,near_lossless=true]" 800 --intent relative
@@ -171,7 +181,7 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
                 HEIGHT=$(vipsheader -f height "$SRC_IMG_PATH")
 
                 vips dzsave "$SRC_IMG_PATH" "$TILE_PATH" \
-                    --layout google --centre --suffix .webp[Q=95,near_lossless=true] \
+                    --layout google --centre --suffix .png \
                     --tile-size 256 --vips-progress
 
                 HTML_FILE="$MAPS_HTML_DIR/${IMG_BASE}.md"
