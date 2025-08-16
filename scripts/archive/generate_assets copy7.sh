@@ -95,7 +95,7 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
         ASPECT_RATIO=$(awk "BEGIN {printf \"%.3f\", $ORIG_WIDTH / $ORIG_HEIGHT}")
 
         # Use different sizes based on aspect ratio - A4 and taller images get more resolution
-        if [ $(awk "BEGIN {print ($ASPECT_RATIO <= 0.8)}") -eq 1 ]; then
+        if (( $(awk "BEGIN {print ($ASPECT_RATIO <= 0.8)}") )); then
             # Tall images (A4 ratio and taller) - increase resolution to match visual space
             SMALL_SIZE=565   # ~41% more than 400
             MEDIUM_SIZE=1131 # ~41% more than 800  
