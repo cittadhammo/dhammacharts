@@ -17,7 +17,11 @@
               <a href="{{ item.url | prepend: site.baseurl }}">
                 <div class="img-wrapper">
                   {% assign image = item.images | first %}
-                  <img src="{{ site.baseurl }}/assets/images/{{ image.name | split: '.' | first }}/small.{{site.img_ext}}" alt="{{ image.name }}" />
+                  {% assign img = image.name | split: '.' | first %}
+                  <img src="{{ site.baseurl }}/assets/images/{{ img }}/small.{{site.img_ext}}" 
+                  alt="{{ image.name }}" 
+                  loading="lazy"
+                  style="aspect-ratio: {{ site.data.size[img].small }};"/>
                 </div>
                 <span class="h2">{{ item.type }}</span>
                 <h3>{{ item.title }}</h3>

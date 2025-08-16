@@ -15,13 +15,7 @@ if [ ! -f "$TEMPLATE_FILE" ]; then
     exit 1
 fi
 
-echo "Reading template from: $TEMPLATE_FILE"
 TEMPLATE_HTML=$(cat "$TEMPLATE_FILE")
-
-if [ -z "$TEMPLATE_HTML" ]; then
-    echo "Template file is empty or could not be read"
-    exit 1
-fi
 
 mkdir -p "$DEST_IMAGE_DIR"
 mkdir -p "$MAPS_HTML_DIR"
@@ -97,20 +91,20 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
         # Get aspect ratios of generated thumbnails (width/height)
         SMALL_WIDTH=$(vipsheader -f width "$DEST_FOLDER/small.webp")
         SMALL_HEIGHT=$(vipsheader -f height "$DEST_FOLDER/small.webp")
-        SMALL_RATIO=$(awk "BEGIN {printf \"%.3f\", $SMALL_WIDTH / $SMALL_HEIGHT}")
+        SMALL_RATIO=$(echo "scale=3; $SMALL_WIDTH / $SMALL_HEIGHT" | bc -l)
 
         MEDIUM_WIDTH=$(vipsheader -f width "$DEST_FOLDER/medium.webp")
         MEDIUM_HEIGHT=$(vipsheader -f height "$DEST_FOLDER/medium.webp")
-        MEDIUM_RATIO=$(awk "BEGIN {printf \"%.3f\", $MEDIUM_WIDTH / $MEDIUM_HEIGHT}")
+        MEDIUM_RATIO=$(echo "scale=3; $MEDIUM_WIDTH / $MEDIUM_HEIGHT" | bc -l)
 
         LARGE_WIDTH=$(vipsheader -f width "$DEST_FOLDER/large.webp")
         LARGE_HEIGHT=$(vipsheader -f height "$DEST_FOLDER/large.webp")
-        LARGE_RATIO=$(awk "BEGIN {printf \"%.3f\", $LARGE_WIDTH / $LARGE_HEIGHT}")
+        LARGE_RATIO=$(echo "scale=3; $LARGE_WIDTH / $LARGE_HEIGHT" | bc -l)
 
         # Update size data file
-        update_size_data "$IMG_BASE" "$SMALL_RATIO" "$MEDIUM_RATIO" "$LARGE_RATIO"
+        update_size_data "$IMG_NAME" "$SMALL_RATIO" "$MEDIUM_RATIO" "$LARGE_RATIO"
         
-        echo "Stored aspect ratios for $IMG_BASE: small=$SMALL_RATIO, medium=$MEDIUM_RATIO, large=$LARGE_RATIO"
+        echo "Stored aspect ratios for $IMG_NAME: small=$SMALL_RATIO, medium=$MEDIUM_RATIO, large=$LARGE_RATIO"
 
         if [ "$MAP" = "true" ]; then
             TILE_PATH="$DEST_FOLDER/tiles"
@@ -132,8 +126,7 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
 
                 echo "Creating HTML viewer for $IMG_NAME at $HTML_FILE"
 
-                # Use printf instead of echo to avoid quote issues
-                printf '%s' "$TEMPLATE_HTML" \
+                echo "$TEMPLATE_HTML" \
                     | sed "s/__IMG_NAME__/$IMG_BASE/g" \
                     | sed "s/__WIDTH__/$WIDTH/g" \
                     | sed "s/__HEIGHT__/$HEIGHT/g" \

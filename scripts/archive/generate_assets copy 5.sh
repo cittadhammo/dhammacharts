@@ -5,7 +5,6 @@ SRC_IMAGE_DIR="./vault/assets/images/"
 DEST_IMAGE_DIR="./assets/images"
 MD_DIR="./vault/content" 
 MAPS_HTML_DIR="./maps"
-SIZE_DATA_FILE="./vault/data/size.yml"
 TEMPLATE_FILE="./scripts/map-template.html"
 
 # Read the template file
@@ -15,50 +14,10 @@ if [ ! -f "$TEMPLATE_FILE" ]; then
     exit 1
 fi
 
-echo "Reading template from: $TEMPLATE_FILE"
 TEMPLATE_HTML=$(cat "$TEMPLATE_FILE")
-
-if [ -z "$TEMPLATE_HTML" ]; then
-    echo "Template file is empty or could not be read"
-    exit 1
-fi
 
 mkdir -p "$DEST_IMAGE_DIR"
 mkdir -p "$MAPS_HTML_DIR"
-mkdir -p "$(dirname "$SIZE_DATA_FILE")"
-
-# Initialize or load existing size data
-if [ -f "$SIZE_DATA_FILE" ]; then
-    echo "Loading existing size data from $SIZE_DATA_FILE"
-else
-    echo "Creating new size data file at $SIZE_DATA_FILE"
-    echo "# Image aspect ratios (width/height)" > "$SIZE_DATA_FILE"
-fi
-
-# Function to update size data
-update_size_data() {
-    local img_name="$1"
-    local small_ratio="$2"
-    local medium_ratio="$3"
-    local large_ratio="$4"
-    
-    # Create temporary YAML entry
-    local temp_entry="$img_name:
-  small: $small_ratio
-  medium: $medium_ratio
-  large: $large_ratio"
-    
-    # Check if entry exists and update or append
-    if grep -q "^$img_name:" "$SIZE_DATA_FILE"; then
-        # Update existing entry using yq
-        echo "$temp_entry" | yq eval-all 'select(fileIndex == 0) * select(fileIndex == 1)' "$SIZE_DATA_FILE" - > "${SIZE_DATA_FILE}.tmp"
-        mv "${SIZE_DATA_FILE}.tmp" "$SIZE_DATA_FILE"
-    else
-        # Append new entry
-        echo "" >> "$SIZE_DATA_FILE"
-        echo "$temp_entry" >> "$SIZE_DATA_FILE"
-    fi
-}
 
 # Loop through all markdown files
 find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
@@ -94,24 +53,6 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
         vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/medium.webp[Q=95,near_lossless=true]" 800 --intent relative
         vips thumbnail "$SRC_IMG_PATH" "$DEST_FOLDER/large.webp[Q=95,near_lossless=true]" 1600 --intent relative
 
-        # Get aspect ratios of generated thumbnails (width/height)
-        SMALL_WIDTH=$(vipsheader -f width "$DEST_FOLDER/small.webp")
-        SMALL_HEIGHT=$(vipsheader -f height "$DEST_FOLDER/small.webp")
-        SMALL_RATIO=$(awk "BEGIN {printf \"%.3f\", $SMALL_WIDTH / $SMALL_HEIGHT}")
-
-        MEDIUM_WIDTH=$(vipsheader -f width "$DEST_FOLDER/medium.webp")
-        MEDIUM_HEIGHT=$(vipsheader -f height "$DEST_FOLDER/medium.webp")
-        MEDIUM_RATIO=$(awk "BEGIN {printf \"%.3f\", $MEDIUM_WIDTH / $MEDIUM_HEIGHT}")
-
-        LARGE_WIDTH=$(vipsheader -f width "$DEST_FOLDER/large.webp")
-        LARGE_HEIGHT=$(vipsheader -f height "$DEST_FOLDER/large.webp")
-        LARGE_RATIO=$(awk "BEGIN {printf \"%.3f\", $LARGE_WIDTH / $LARGE_HEIGHT}")
-
-        # Update size data file
-        update_size_data "$IMG_BASE" "$SMALL_RATIO" "$MEDIUM_RATIO" "$LARGE_RATIO"
-        
-        echo "Stored aspect ratios for $IMG_BASE: small=$SMALL_RATIO, medium=$MEDIUM_RATIO, large=$LARGE_RATIO"
-
         if [ "$MAP" = "true" ]; then
             TILE_PATH="$DEST_FOLDER/tiles"
 
@@ -132,8 +73,7 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
 
                 echo "Creating HTML viewer for $IMG_NAME at $HTML_FILE"
 
-                # Use printf instead of echo to avoid quote issues
-                printf '%s' "$TEMPLATE_HTML" \
+                echo "$TEMPLATE_HTML" \
                     | sed "s/__IMG_NAME__/$IMG_BASE/g" \
                     | sed "s/__WIDTH__/$WIDTH/g" \
                     | sed "s/__HEIGHT__/$HEIGHT/g" \
@@ -149,4 +89,4 @@ find "$MD_DIR" -type f -name "*.md" | while read -r MD_FILE; do
     done
 done
 
-echo "Aspect ratio data has been updated in $SIZE_DATA_FILE"
+echo "Size data has been updated in $SIZE_DATA_FILE"

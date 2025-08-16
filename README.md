@@ -18,6 +18,7 @@ Categories of the items are extracted via their path.
 make serve      # Starts Jekyll with livereload
 make assets     # Runs your searchAndMap.sh script
 make images     # Runs the Python script inside the vault directory
+make clean      # Cleans up the build folder
 ```
 
 ## Generating assets
