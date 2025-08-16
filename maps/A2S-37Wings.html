@@ -9,21 +9,35 @@
     <style>
         html, body { margin: 0; height: 100%; width: 100%; overflow: hidden; }
         #map { width: 100%; height: 100%; background-color: white; }
-        .ol-control { font-size: 16px; }
+        .ol-control { font-size: 17px; }
         .cross {
-			top: 0.5em;
-			right: 0.5em;
-            color: #aaaaaa;
-			float: right;
-			font-size: 16px;
-			font-weight: bold;
+            top: 0.5em;
+            left: 0.5em;
+            float: right;
 		}
-        .close:hover,
-		.close:focus {
-			color: #000;
-			text-decoration: none;
-			cursor: pointer;
-		}
+        .cross button {
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cross button:hover,
+        .cross button:focus {
+            opacity: 1;
+        }
+        .cross button img {
+            width: 13px;
+            height: 13px;
+            display: block;
+            object-fit: contain;
+        }
+        .ol-zoom {
+            top: 2.5em !important;  
+        }
+        .ol-control button {
+            color: black !important;
+            // border: 1px solid #b8b8b8;
+        }
     </style>
 </head>
 
@@ -34,10 +48,13 @@
         const height = 4960;
         const extent = [0, 0, width, height];
 
-        // cross button
-
+        // previous button with image
         const button = document.createElement("button");
-        button.innerHTML = "&times;";
+        const img = document.createElement("img");
+        img.src = "/assets/icons/previous.png";
+        img.alt = "Previous";
+        button.appendChild(img);
+
 
         
         
@@ -192,4 +209,3 @@
         });
     </script>
 </body>
-
