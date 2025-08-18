@@ -7,4 +7,5 @@ year:
 images: 
   - name: A0VM-SuttaPitaka.png
     map: true
+    background: black
 ---
